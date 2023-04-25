@@ -1,16 +1,28 @@
 /* eslint-disable no-debugger */
+import { style } from '@vanilla-extract/css';
+
 export enum VIEW_STATE2 {
     APPEND = 'append',
     PREPEND = 'prepend',
     REPLACE = 'replace',
   }
+  export const container = style({
+    padding: 10
+  });
+  // multuple matches needs to be handled
+  // support index also
 
   export default {
+    class: "flex bg-red-100",
     id: 'repository_panel',
     view: {
       className: '',
       items: [
         {
+          target: {
+            key:"id",
+            valu:'respository-'
+,          },
           component: 'widget',
           id: 'loading_shimmer',
           viewState: VIEW_STATE2.REPLACE,

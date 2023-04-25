@@ -5,12 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "vite build"
+    "build": "vite build && node ./buildCss.js"
   },
   "author": "",
   "license": "MIT",
-  "dependencies": {
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^18.15.13",
+    "postcss": "^8.4.23",
+    "tailwindcss": "^3.3.1",
     "vite": "^4.2.1"
-  },
-  "type": "module"
+  }
 }
