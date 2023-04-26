@@ -4,6 +4,7 @@ import * as fs from "fs/promises";
 
 import { fileURLToPath } from "url";
 import { dirname, join } from "path";
+import tailwindConfig from "./tailwind.config.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -12,6 +13,7 @@ const generateTailwindCss = async (contentRaw) => {
   return (
     await postcss([
       tailwind({
+        ...tailwindConfig,
         content: [{ raw: contentRaw }],
       }),
     ]).process(

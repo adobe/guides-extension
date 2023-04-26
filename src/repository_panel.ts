@@ -9,7 +9,7 @@ export enum VIEW_STATE2 {
   export const container = style({
     padding: 10
   });
-  // multuple matches needs to be handled
+  // multiple matches needs to be handled
   // support index also
 
   export default {
