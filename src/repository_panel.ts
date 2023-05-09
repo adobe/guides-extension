@@ -1,14 +1,17 @@
-/* eslint-disable no-debugger */
-import { style } from '@vanilla-extract/css';
+/*
+Copyright 2022 Adobe
+All Rights Reserved.
+
+NOTICE: Adobe permits you to use, modify, and distribute this file in
+accordance with the terms of the Adobe license agreement accompanying
+it.
+*/
 
 export enum VIEW_STATE2 {
     APPEND = 'append',
     PREPEND = 'prepend',
     REPLACE = 'replace',
   }
-  export const container = style({
-    padding: 10
-  });
   // multiple matches needs to be handled
   // support index also
 
