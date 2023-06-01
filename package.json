@@ -1,11 +1,11 @@
 {
-  "name": "guides-extension",
+  "name": "@adobe/guides-extension",
   "version": "1.0.0",
   "description": "An application that will generate a javascript override for Adobe AEM Guides components",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "vite build && node ./buildCss.js"
+    "build": "vite build && node ./buildCss.mjs"
   },
   "author": "",
   "license": "MIT",
