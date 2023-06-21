@@ -1,0 +1,63 @@
+# guides-extension [![NPM version](https://img.shields.io/npm/v/is-even.svg?style=flat)](https://www.npmjs.com/package/is-even)
+
+> This is a starting point for creating extension Adobe AEM Guides. Minimum required guides version is 4.3.
+
+
+## Extension creation
+
+You will have window.tcx or tcx available as a global object that you'll be interfacing with.
+
+Create a object of type Extension.
+```js
+const viewJSON = {
+    items: [ //required key with array
+      {
+        component: 'label',
+        // fields can have @ symbol which tells the framework we have an observable value.
+        //@extraProp is an ObservableMap created for adding custom keys so that they don't conflict with existing keys.
+        label: '@extraProps.commentUniqId',
+        extraclass: 'commentUniqId',
+        on-click:"handleLabelClick",
+        target: {//target object with required key,value fields
+          key: 'extraclass',
+          value: 'user-image',
+          viewState: VIEW_STATE.PREPEND,//specifiying how you want your view to be inserted
+        },
+      },
+    ]
+}
+
+const extension = {
+    view: viewJSON,
+    controller:{
+        init:(){
+            //initialization code for your component
+        },
+    handleLabelClick:(args){
+        //event listener attached to the json
+    }
+    }
+}
+```
+
+Register it using the register method in extension object.
+
+```js
+tcx?.extension?.register("<component_name>", extension);
+```
+Many working examples are provided in the src directory.
+
+## Install
+
+Build with [npm](https://www.npmjs.com/):
+
+```sh
+$ npm run build
+```
+
+When you run build command this will produce js and css in the /build folder put those in the clientlibs category 
+```
+Aem Guides  - apps.fmdita.tcx
+Guides Review  - apps.fmdita.review
+```
+## About
