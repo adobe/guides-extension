@@ -21,6 +21,18 @@ When you run build command this will produce js and css in the /build folder put
 Aem Guides  - apps.fmdita.tcx
 Guides Review  - apps.fmdita.review
 ```
+## Extension Directory structure
+├── src
+│   ├── **/*ts
+│   ├── index.ts
+├── build
+├── node_modules
+├── package.json
+├── package-lock.json 
+└── .gitignore
+└── buildCSS.mjs // for creating tailwind classes
+└── vite.config.js // config for specifying TS and javascript build options
+└── taliwind.config.js // config for tailwind we can add custom config for a design system here
 
 ## Extension creation
 
