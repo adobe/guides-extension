@@ -22,10 +22,14 @@ Aem Guides  - apps.fmdita.tcx
 Guides Review  - apps.fmdita.review
 ```
 ## Extension Directory structure
+```
 ├── src
-│   ├── **/*ts
+│   ├── **/*ts // you will have various extension files here and register them 
 │   ├── index.ts
-├── build
+├── dist
+│   ├── gudies-extension.js // you can either choose es modulde (this one) or .cjs(other one) file
+│   ├── gudies-extension.umd.cjs
+│   ├── build.css // this is your tailwind css output
 ├── node_modules
 ├── package.json
 ├── package-lock.json 
@@ -33,7 +37,7 @@ Guides Review  - apps.fmdita.review
 └── buildCSS.mjs // for creating tailwind classes
 └── vite.config.js // config for specifying TS and javascript build options
 └── taliwind.config.js // config for tailwind we can add custom config for a design system here
-
+```
 ## Extension creation
 
 You will have window.tcx or tcx available as a global object that you'll be interfacing with.
