@@ -2,7 +2,10 @@
 
 > This is a starting point for creating extension Adobe AEM Guides. Minimum required guides version is 4.3.
 
-
+You can use this project as a starting point by downloading this from the repo or running the following command.
+```bash
+npx @adobe/create-guides-extension
+```
 ## Extension creation
 
 You will have window.tcx or tcx available as a global object that you'll be interfacing with.
