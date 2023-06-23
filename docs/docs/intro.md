@@ -2,46 +2,59 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Jui Framework
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Before going into how to write extensions we'll understand the arcitecture of the framework.
+So that we may extend it effectively.
 
-## Getting Started
 
-Get started by **creating a new site**.
+## Introduction
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+JUI is a MVC framework on top of React and Adobe React Spectrum components. JUI is JSON User Interface. It consists of multiple git repositories.
 
-### What you'll need
+JUI-Core is the core library with all logic to convert JSON config to working react components and link it with a relevant controller class instance.
+JUI-React-Spectrum  library has wrapper widgets of Adobe React Spectrum components
+## JUI Core Design
+### MVC UI Design
+![Alt text](../static/img/jui-mvc-flow.png)
+### Widget
+  - Has a unique ID.
+  - Has an individual JSON file for view.
+  - Can have an own or shared Controller.
+  - Can use parent model or new model.
+  - Can have UI elements(React Components)
+  - Can have other widgets
+  - App is a Widgets
 
-- [Node.js](https://nodejs.org/en/download/) version 16.14 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
-
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+![Alt text](../static/img/jui-widget.png)
+### Element
+  - Is a HTML/React Component.
+  - Does not have any model, its uses parent widget model.
+### Event Handler
+  - Next(eventOpts)
+    - To trigger event with some opts
+  - Subscribe(callback)
+    - Get notification that event is fired with configuration
+### App/Global Model
+  - Next(new value)
+    - To publish new value
+  - Subscribe(callback)
+    - To get notification for value changed
+    - First time get old value
+  - GetValue()
+    - To get current value
+### Controller
+  - It should be extended from Controller class
+  - APIs
+  - CreateModel
+    - To create child widget separate model
+  - InitEventHandler
+    - To create child widget separate event handler
+  - RegisterCommands
+    - To Register local, parent or app events
+  - Next(eventName, eventHandler)
+    - To trigger event of child widget event handler, parent widget event handler or app event handler
+  - Subscribe(callback, eventHandler)
+  - SubscribeAppModel(callback)
+### Sample App design
+![Alt text](../static/img/jui-sample-app.png)

@@ -77,34 +77,6 @@ const config = {
           {to: '/blog', label: 'Blog', position: 'left'},
         ],
       },
-      footer: {
-        style: 'dark',
-        links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Tutorial',
-                to: '/docs/intro',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
-            ],
-          },
-        ],
-      },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
