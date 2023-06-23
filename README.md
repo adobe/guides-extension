@@ -6,6 +6,22 @@ You can use this project as a starting point by downloading this from the repo o
 ```bash
 npx @adobe/create-guides-extension
 ```
+
+## Install
+
+Build with [npm](https://www.npmjs.com/):
+
+```sh
+$ npm run build
+```
+### Adding Assets to Clientlibs
+When you run build command this will produce js and css in the /build folder put those in the <a name="clientlibs">clientlibs</a> category.
+
+```
+Aem Guides  - apps.fmdita.tcx
+Guides Review  - apps.fmdita.review
+```
+
 ## Extension creation
 
 You will have window.tcx or tcx available as a global object that you'll be interfacing with.
@@ -48,22 +64,8 @@ Register it using the register method in extension object.
 ```js
 tcx?.extension?.register("<component_name>", extension);
 ```
-Many working examples are provided in the src directory.
+Working examples are provided in the src directory.
 
-## Install
-
-Build with [npm](https://www.npmjs.com/):
-
-```sh
-$ npm run build
-```
-### Adding Assets to Clientlibs
-When you run build command this will produce js and css in the /build folder put those in the <a name="clientlibs">clientlibs</a> category.
-
-```
-Aem Guides  - apps.fmdita.tcx
-Guides Review  - apps.fmdita.review
-```
 ## CSS
 For the consistency we provide the component already styled. The inserted JSON will have inherent styles applied to it
 The primary way to manage css is through the extraClass key in the extensions. 
