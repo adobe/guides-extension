@@ -9,7 +9,6 @@ it.
 import * as loader from "./loader";
 import repository_panel from "./repository_panel";
 import comment from "./comment";
-export { loader };
 export { default as repository_panel } from "./repository_panel";
 export { default as Comment } from "./comment";
 
