@@ -27,10 +27,10 @@ To access an attribute added to the model we will use the following syntax:
 const value = this.model.extraProps.get("key")
 ```
 
-
 ### View:
 
 The view defines the UI of the app. We use JSON files to define the view of our files. Here, we define the components, the css (as given in the extraclass of components) and render the values stored in the model.
+In our app, each view is defined using a JSON. The JSONs are referenced using their unique IDs called a `id`.
 
 ### Controller
 
@@ -48,8 +48,6 @@ The `methodName` here serves as the `key` to reference the method in the JSON (v
 ```typescript
 this.next('methodName', args)
 ```
-
-
 
 ## Example
 
