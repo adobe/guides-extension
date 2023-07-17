@@ -1,4 +1,5 @@
-//typs 
+import _ from 'appSrc/libs/lodash'
+
 export enum VIEW_STATE {
   APPEND = 'append',
   PREPEND = 'prepend',
@@ -55,18 +56,18 @@ export type Extention = {
   }
 }
 
-const reviewComment =  {
-  id: 'review_comment',//component id we want to extend docs will have full list of extendible component
+const controllerId =  {
+  id: 'review_comment',
   view: {
     items: [
       {
         component: 'label',
         label: '@extraProps.commentUniqId',
         extraclass: 'commentUniqId',
-        target: {//target identifying object, check json for the available component to find your target value
+        target: {
           key: 'extraclass',
           value: 'user-image',
-          viewState: VIEW_STATE.PREPEND,//view state tells how your want the extension to be inserted (append/prepend/replace)
+          viewState: VIEW_STATE.PREPEND,
         },
 
       },
@@ -75,15 +76,15 @@ const reviewComment =  {
         extraclass: 'user-info',
         items: [
           {
-            component: 'label',//label component
-            "label": "@extraProps.userInfo",//@extraProps is a special observable so we can link the model values to the view
-            "extraclass": "reviewer-name",//extra class add classes to the element 
+            component: 'label',
+            "label": "@extraProps.userInfo",
+            "extraclass": "reviewer-name",
           },
           {
-            component: 'button',//label component
-            icon: 'email',//icon for the component
+            component: 'button',
+            icon: 'email',
             extraclass: 'mailto-icon',
-            "on-click": "openMailTo"//on-click handler, the event handlers have on-<event-name> like on-move , on-select etc
+            "on-click": "openMailTo"
           }
         ],
         target: {
@@ -154,7 +155,7 @@ const reviewComment =  {
                 "placeholder": "",
                 'value': "@extraProps.severity",
                 "on-change": "changeSeverity",
-                "on-keyup": { "name": "changeSeverity", "eventArgs": { "keys": [ "ENTER" ]} },//when we want to bind to a key we can provide keys in event args with name as event name
+                "on-keyup": { "name": "changeSeverity", "eventArgs": { "keys": [ "ENTER" ]} },
               },
             ],
           },
@@ -189,47 +190,31 @@ const reviewComment =  {
           value: 'comment-block',
           viewState: VIEW_STATE.APPEND,
         },
-      }
+      },
     ],
   },
+  model: {
+    deps: ['userFirstName', 'userLastName', 'userTitle', 'userEmail', 'userJobTitle', 'userInfo', 
+    'labels', 'severity', 'commentRationale', 'commentUniqId', 'originalCommentRationale'],
+  },
   controller: {
-    //special function that runs when the component gets initialized. This can trvially run in cases where 
-    //the component is a part of a list and the list gets updated such is the case here
     init: function () {
-      //setting the drop down values for the labels array to be fed into the select field as options
+      const reqComment = tcx.commentStore.getComment(this.model.commentId)
+      this.model.extraProps = reqComment.extraProps
       this.model.extraProps.set("labels", ['None', 'CRITICAL', 'MAJOR', 'SUBSTANTATIVE', 'ADMINISTRATIVE'])
-      this.model.extraProps.set("originalCommentRationale", "")
     },
-    //besides init rest of the functions are registed as events. 
-    //So the json on-change:"changeSeverity" will run when the severity changes
+
     changeSeverity: function(args) {
       this.model.extraProps.set("severity", args.data)
-      const curUserInfo = tcx.model.getValue(tcx.model.KEYS.PAGE_CURRENT_USER),
-       user = _.get(curUserInfo, 'userName'),
-       data = {
-          commentId: this.model.commentId,
-          version: this.model.version,
-          replyId: '',
-          timeStamp: new Date().getTime(),
-          user: user,
-          attachmentEvents: this.model.uploadedAttachmentsEvents,
-          severity: this.model.extraProps.get("severity")
-      }
-      this.parentController.next('updateSeverity', data)
+      this.updateExtraProps(
+        {'severity': this.model.extraProps.get("severity")}
+      )
     },
+
     changeCommentRationale: function() {
-      const curUserInfo = tcx.model.getValue(tcx.model.KEYS.PAGE_CURRENT_USER),
-       user = _.get(curUserInfo, 'userName'),
-       data = {
-          commentId: this.model.commentId,
-          version: this.model.version,
-          replyId: '',
-          timeStamp: new Date().getTime(),
-          user: user,
-          attachmentEvents: this.model.uploadedAttachmentsEvents,
-          commentRationale: this.model.extraProps.get("commentRationale")
-      }
-      this.parentController.next('updateCommentRationale', data)
+      this.updateExtraProps(
+        {'commentRationale': this.model.extraProps.get("commentRationale")}
+      )
     },
 
       submitEditComment({domEvent}:{domEvent?:KeyboardEvent}={}) {
@@ -237,29 +222,25 @@ const reviewComment =  {
           this.model.commentRationale = _.trim(this.model.commentRationale)
         }
         if (this.model.extraProps.get("originalCommentRationale") !== this.model.extraProps.get("commentRationale")) {
-          this.model.extraProps.set("originalCommentRationale", this.model.commentRationale)
+          this.model.extraProps.set("originalCommentRationale", this.model.extraProps.get("commentRationale"))
           this.next('changeCommentRationale')
       }
     },
 
     openMailTo(){
-      const mailToLink = `mailto:${this.model.extraProps?.email}`
+      const mailToLink = `mailto:${this.model.extraProps.get("userEmail")}`
       tcx.util.openLink(mailToLink)
-    }
+    },
   }
 }
-// optional export
-export default controllerId 
+export default controllerId
 window.addEventListener('tcx-loaded',()=>{
-  /**
- * Registers a controller
- * @constructor
- * @param {string} id - The component Id to be registered
- * @param {string} extension - The extension component to be registered
- */
   tcx?.extension?.register(controllerId.id, controllerId);
-  //register the component in the extesion namespace of tcx
-  //without this we cannot insert any component
 })
 
+export type ClassExtention = {
+  id:string
+  init?:(...args:unknown[])=>void
+  model?:Record<string,unknown>
+}
 
