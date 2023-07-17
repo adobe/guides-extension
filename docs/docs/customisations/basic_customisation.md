@@ -68,7 +68,7 @@ In this example, clicking the button changes its label.
 }
 ```
 
-## Model:
+### Model:
 
 in this case, `extraProps.buttonLabel` holds the label of the button
 
