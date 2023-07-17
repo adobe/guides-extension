@@ -26,7 +26,7 @@ const inline_extend =  {
       })
     },
 
-    dispatchCommentEvent(args){
+    onNewCommentEvent(args){
       const events = _.get(args, "events")
       const currTopicIndex = tcx.model.getValue(tcx.model.KEYS.REVIEW_CURR_TOPIC) || this.model.currTopicIndex || "0"
       const event = _.get(_.get(events, currTopicIndex), '0')
