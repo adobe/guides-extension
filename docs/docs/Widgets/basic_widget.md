@@ -42,4 +42,4 @@ const widgetJSON =  {
 },
 ```
 
-Here, `@languages` is an array defined in the corresponding controller of `widget_languages` as: ["English", "French", "Hindi", "Spanish", "Urdu"]
+Here, `@languages` is an array defined in the model of `widget_languages` as: ["English", "French", "Hindi", "Spanish", "Urdu"]
