@@ -49,3 +49,54 @@ In the above example we have:
 1. the `id` of the JSON we want to insert our component into, i.e. `annotation_toolbox`
 2. the target is the `addcomment` button. We add our button after the `addcomment` button using the viewState `append`.
 3. We define the on-click event of the button in the controller.
+
+The JSON for the `annotation_toolbox` is :
+```JSON
+const json ={
+    "id": "annotation_toolbox",
+    "component": "blockGroup",
+    "extraclass": "review-commenting",
+    "hide": "@disableCommenting",
+    "items": [
+        {
+            "component": "buttonGroup",
+            "extraclass": "review-annotations",
+            "value": "@selectedAnnotation",
+            "items": [
+                {
+                    "component": "button",
+                    "icon": "highlight",
+                    "title": "Highlight",
+                    "value": "highlight",
+                    "metadata": "highlight",
+                    "on-click": "annotationSelected"
+                },
+                {
+                    "component": "button",
+                    "icon": "textStrikethrough",
+                    "title": "Strikethrough",
+                    "value": "strikethrough",
+                    "metadata": "strikethrough",
+                    "on-click": "annotationSelected"
+                },
+                {
+                    "component": "button",
+                    "icon": "textAdd",
+                    "title": "Insert text",
+                    "value": "insertext",
+                    "metadata": "insertext",
+                    "on-click": "annotationSelected"
+                },
+                {
+                    "component": "button",
+                    "icon": "comment",
+                    "title": "Add comment",
+                    "value": "addcomment",
+                    "metadata": "addcomment",
+                    "on-click": "annotationSelected"
+                }
+            ]
+        }
+    ]
+}
+```
