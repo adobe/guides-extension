@@ -16,7 +16,7 @@ export enum VIEW_STATE2 {
   // support index also
 
   export default {
-    class: "flex bg-red-100",
+    class: "flex bg-red-100 bg-green-200 bg-green-300 mr-4",
     id: 'repository_panel',
     view: {
       className: '',

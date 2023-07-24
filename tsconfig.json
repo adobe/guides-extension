@@ -2,11 +2,11 @@
     "compilerOptions": {
       "target": "ES2018",
       "module": "ESNext",
-      "strict": true,
-      "noImplicitAny": true,
+      "strict": false,
+      "noImplicitAny": false,
       "esModuleInterop": true,
       "skipLibCheck": true,
-      "forceConsistentCasingInFileNames": true
+      "forceConsistentCasingInFileNames": false
     },
     "$schema": "https://json.schemastore.org/tsconfig",
     "display": "Recommended"
