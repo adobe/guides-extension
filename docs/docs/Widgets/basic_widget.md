@@ -5,7 +5,7 @@ sidebar_position: 1
 
 # Widgets
 
-Multiple basic components, as discussed (here) can be combined to make a widget. 
+Multiple basic components, as discussed [here](../components/) can be combined to make a widget. 
 Widgets can be used to make a new "more complex" component, or give structure to items of a component.
 
 Let's dive into the concept of a widget!
@@ -34,9 +34,6 @@ const widgetJSON =  {
         {
             component: "list",
             data: "@languages",
-            itemConfig: {
-                component: "label"
-            }
         }
     ]
 },
