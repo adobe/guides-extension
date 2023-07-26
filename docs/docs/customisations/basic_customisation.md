@@ -82,6 +82,10 @@ in this case, `extraProps.buttonLabel` holds the label of the button
 
     switchButtonLabel(){
         const buttonLabel = this.model.extraProps.get("buttonLabel") === "Submit"? "Cancel" : "Submit"
+        this.model.extraProps.set("buttonLabel", buttonLabel)
     }
   }
 ```
+
+Below GIF shows the above code in action
+![basic_customisation](imgs/basic_customisation.gif "Basic customisation button")

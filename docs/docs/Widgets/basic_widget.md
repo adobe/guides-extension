@@ -15,28 +15,32 @@ We will start by making a simple widget to display a list of languages.
 ```js title="basicWidget.js"
 
 const widgetJSON =  {
-    component: "div", 
-    id: "widget_languages", 
-    items: [ // adding components to the widget
+    "component": "div", 
+    "id": "widget_languages", 
+    "items": [ // adding components to the widget
         {
-            component: "div",
-            items: [
+            "component": "div",
+            "items": [
                 {
-                    component: "icon",
-                    icon: "info"
+                    "component": "icon",
+                    "icon": "info"
                 },
                 {
-                    component: "label",
-                    label: "List of some languages"
+                    "component": "label",
+                    "label": "List of some languages"
                 }
             ]
         },
         {
-            component: "list",
-            data: "@languages",
+            "component": "list",
+            "data": "@languages"
         }
     ]
 },
 ```
 
 Here, `@languages` is an array defined in the model of `widget_languages` as: ["English", "French", "Hindi", "Spanish", "Urdu"]
+
+The rendered basic widget will look like this:
+
+![basic_widget](imgs/basic_widget.png "Basic widget")
