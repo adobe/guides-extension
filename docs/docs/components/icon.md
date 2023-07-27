@@ -12,12 +12,16 @@ Icons available at [Adobe Spectrum Icons](https://spectrum.adobe.com/page/icons/
 ```js title="icon.js"
 
 const iconJSON =  {
-    component: "icon", //tells the component name
-    icon: "info", // name of the icon to be used
-    size: "S", // size of the icon
-    title: "Information" // tooltip corresponding to the icon.
+    "component": "icon", //tells the component name
+    "icon": "info", // name of the icon to be used
+    "size": "S", // size of the icon
+    "title": "Information" // tooltip corresponding to the icon.
 },
 
 ```
 
 icons can also be added to buttons. 
+
+The rendered icon will look like this:
+
+![icon](imgs/info_icon.png "Icon")

@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Simple example of adding a button in the app
+# Simple customisation example
 
 Let us now how to integrate these customisations in our AEM Guides app.
 
@@ -100,3 +100,10 @@ const json ={
     ]
 }
 ```
+Before customisation, the annotation toolbox looked like this:
+
+![annotation-toolbox](imgs/annotation_toolbox.png "Annotation toolbox")
+
+After the customisation, the annotation toolbox looks like this:
+
+![customised-annotation-toolbox](imgs/customised_annotation_toolbox.png "Customised annotation toolbox")
