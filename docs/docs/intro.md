@@ -28,7 +28,7 @@ JUI-React-Spectrum  library has wrapper widgets of Adobe React Spectrum compone
 
 ![Alt text](../static/img/jui-widget.png)
 ### Element
-  - Is a HTML/React Component.
+  - Is an HTML/React Component.
   - Does not have any model, its uses parent widget model.
 ### Event Handler
   - Next(eventOpts)

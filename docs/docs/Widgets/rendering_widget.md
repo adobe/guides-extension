@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Rendering widgets
 
-We can render a widget by referncing it using its `id`
+We can render a widget by referencing it using its `id`
 
 To render th widget `widget_languages` anywhere in the app we can use the simple syntax:
 ```json

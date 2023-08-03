@@ -10,8 +10,8 @@ sidebar_position: 2
 │   ├── **/*{js,ts}
 │   ├── index.ts
 ├── dist
-│   ├── gudies-extension.js
-│   ├── gudies-extension.umd.cjs
+│   ├── guides-extension.js
+│   ├── guides-extension.umd.cjs
 │   ├── build.css
 ├── node_modules
 ├── package.json
@@ -38,7 +38,7 @@ This is the build directory. You will find the css(from tailwind classes) and th
 
 ```
 ├── dist
-│   ├── gudies-extension.js // you can either choose es modulde (this one) or .cjs(other one) file
+│   ├── gudies-extension.js // you can either choose es module (this one) or .cjs(other one) file
 │   ├── gudies-extension.umd.cjs
 │   ├── build.css // this is your tailwind css output
 ```

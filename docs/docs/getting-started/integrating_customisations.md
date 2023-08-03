@@ -2,6 +2,8 @@
 sidebar_position: 3
 ---
 
+Extensions give you the opportunity to customise your AEM Guides app to better suit your needs. This extension framework is supported with AEM Guides v4.3 onwards.
+
 # Installation
 
 The easiest way to bootstrap AEM Guides framework installation is through cli
@@ -26,7 +28,7 @@ npx @adobe/create-guides-extension
     - `guides-extension.js`
     - `guides-extension.umd.cjs`
 
-- Go to `CRXDE`
+- Go to `CRXDE` `crx/de/index.jsp#/`
 - Under the `apps` folder, make a new node of the type `cq:ClientLibraryFolder`
 - In the `properties` of the node, select `Multi` add the following property
     `Name`: categories

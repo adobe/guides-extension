@@ -6,17 +6,17 @@ To ease the customisation of the review app we have provided some hooks listed a
 - id: `review_comment`
 - hook: `this.updateExtraProps`:
 
-As discussed [here](../customisations/basic_customisation), any new attribute added during customisation goes under `this.model.extraProps`. The method `updateExtraProps` allows you to add attributes to a review comment, handling the updation and storage of the added attrubute on the server as well.
+As discussed [here](../customisations/basic_customisation), any new attribute added during customisation goes under `this.model.extraProps`. The method `updateExtraProps` allows you to add attributes to a review comment, handling the updation and storage of the added attribute on the server as well.
 
 #### Usage Example:
 
 Say for example, you want to add fields `commentRationale` and `severity` to your comments. 
-Let us update the `commentRationale` to "This is an importnant sentence." and the `severity` to "CRITICAL".
+Let us update the `commentRationale` to "This is an important sentence." and the `severity` to "CRITICAL".
 This can be done using the syntax:
 
 ```typescript
  this.updateExtraProps(
-        {'commentRationale': 'This is an importnant sentence.',
+        {'commentRationale': 'This is an important sentence.',
         'severity': 'CRITICAL'}
       )
 ```
