@@ -1,0 +1,57 @@
+{
+    "component": "blockGroup",
+    "id": "review_left_panel_item",
+    "data-path": "@props.href",
+    "data-type": "@props.type",
+    "uniqKey": "@uniqKey",
+    "extraclass": [ "ditamap-viewer-item", "tree-item-content", "@selectionClass", "review-panel-item" ],
+    "items": [
+      {
+        "component": "blockGroup",
+        "extraclass": ["ditamap-viewer-item-content" ],
+        "on-click": "contentClicked",
+        "on-dblclick": "openFile",
+        "items": [
+          {
+            "extraclass": [ "tree-item-linkicon", "broken" ],
+            "show": "@isDeleted",
+            "component": "div",
+            "title": "File is deleted",
+            "items": [ { "component": "icon", "icon": "close", "size": "XS" } ]
+          },
+          {
+            "component": "blockGroup",
+            "extraclass": ["@contentIconClass", "review-item-icon"],
+            "title": "@fileType",
+            "items": [ { "component": "icon", "icon": "@fileType", "size": "S"} ]
+          },
+          {
+            "component": "div",
+            "extraclass": ["item-text-count"],
+            "items":[
+              {
+                "component": "blockGroup",
+                "extraclass": ["ditamap-viewer-item-text", "@noReviewClass"],
+                "title": "@topicTooltip",
+                "items": [ 
+                  { "component": "label", "label": "@label", "class": "review-item-text" }
+                ]
+              },
+              {
+                "component": "div",
+                "class": "comment-count",
+                "show": ["@inReview", "@showCount"],
+                "items": [
+                  {
+                    "component":"label",
+                    "class": "comment-label",
+                    "label": "@commentCount"
+                  }
+                ]
+              } 
+            ]
+          }
+        ]
+      }
+    ]
+  }

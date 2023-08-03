@@ -1,0 +1,24 @@
+---
+sidebar_position: 6
+---
+
+The below JSONs are customisable:
+
+Context Menus:
+- `file_options`
+- `folder_options`
+- `collection_options`
+- `map_view_options`
+- `baseline_panel_menu`
+- `preset_item_menu`
+
+Review App:
+- [`inline_review_panel`](./../../jsons/review_app/inline_review_panel.json) 
+- [`annotation_toolbox`](./../../jsons/review_app/annotation_toolbox.json)
+- [`review_comment`](./../../jsons/review_app/review_comment.json)
+- [`comment_reply`](./../../jsons/review_app/comment_reply.json)
+- [`comment_new_reply`](./../../jsons/review_app/comment_new_reply.json)
+- [`review_toolbar`](./../../jsons/review_app/review_toolbar.json)
+- [`review_left_panels_container`](./../../jsons/review_app/review_left_panels_container.json)
+- [`review_left_panel_topics`](./../../jsons/review_app/review_left_panel_topics.json)
+- [`review_left_panel_item`](./../../jsons/review_app/review_left_panel_item.json)
