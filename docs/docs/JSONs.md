@@ -1,7 +1,7 @@
 ---
 sidebar_position: 7
 ---
-
+<!-- 
 ### The below JSONs are customisable:
 
 Context Menus:
@@ -21,4 +21,4 @@ Review App:
 - [`review_toolbar`](./../../jsons/review_app/review_toolbar.json)
 - [`review_left_panels_container`](./../../jsons/review_app/review_left_panels_container.json)
 - [`review_left_panel_topics`](./../../jsons/review_app/review_left_panel_topics.json)
-- [`review_left_panel_item`](./../../jsons/review_app/review_left_panel_item.json)
+- [`review_left_panel_item`](./../../jsons/review_app/review_left_panel_item.json) -->
