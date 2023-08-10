@@ -1,0 +1,61 @@
+{
+    "component": "blockGroup",
+    "id": "comment_new_reply",
+    "extraclass": "new-reply",
+    "items": [
+      {
+        "component": "blockGroup",
+        "extraclass": "post-reply",
+        "items": [
+          {
+            "component": "textarea",
+            "id": "new_reply",
+            "canHaveFocus": true,
+            "data": "@newReply",
+            "placeholder": "Write Reply...",
+            "on-click": {"name": "setfocus", "args": { "id": "new_reply" }},
+            "on-keyup": { "name": "newReplyAdded", "eventArgs": { "keys": [ "ENTER" ]} },
+            "stopKeyPropagation": true
+          },
+          {
+            "component": "widget",
+            "extraclass": "attachment-button",
+            "isReply": true,
+            "id": "file_upload",
+            "inputModel":{
+              "commentId":"@commentId"
+            }
+          }
+        ]
+      },
+      {
+        "component": "selectlist",
+        "data": "@newReplyAttachments",
+        "hide":"@emptyAttachments",  // extraclass
+        "itemConfig": {
+          "component": "widget",
+          "id": "attachment_list_item",
+          "isReply": true
+        }
+      },
+      {
+        "component": "buttonGroup",
+        "extraclass": "post-reply-controls",
+        "items": [
+          {
+            "hide": "@hideCancelButton",
+            "component": "button",
+            "label": "Cancel",
+            "on-click": "cancelReply" // extraclass
+          },
+          {
+            "component": "button",
+            "label": "Submit",
+            "disabled": "@disableSubmitReply",
+            "extraclass": "submit-button",
+            "on-click": "newReplyAdded"
+          }
+        ]
+      }
+    ]
+  }

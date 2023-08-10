@@ -1,0 +1,33 @@
+[
+    {
+      "displayName": "Rename",
+      "data": {
+        "eventid": "renameCollection"
+      },
+      "icon": "rename"
+    },
+    {
+      "displayName": "Delete",
+      "icon": "delete",
+      "class": "menu-separator",
+      "data": {
+        "eventid": "removeCollection"
+      }
+    },
+    {
+      "displayName": "Refresh",
+      "data": {
+          "eventid": "refresh"
+      },
+      "icon": "refresh",
+      "class": "menu-separator"
+    },
+    {
+      "displayName": "View in Assets UI",
+      "data": {
+          "eventid": "view_in_assets_ui"
+      },
+      "icon": "alias",
+      "class": "menu-separator"
+    }
+  ]

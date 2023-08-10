@@ -1,0 +1,55 @@
+[
+    {
+      "displayName": "Generate",
+      "icon": "export",
+      "class": ["generate"],
+      "data": { "eventid": "generate", "disable": true }
+    },
+    {
+      "displayName": "View Output",
+      "icon": "Visibility",
+      "class": ["view-output", "menu-separator"],
+      "data": { "eventid": "view", "disable": true }
+    },
+    {
+      "displayName": "View Log",
+      "icon": "DataBook",
+      "class": ["view-log", "menu-separator"],
+      "data": { "eventid": "view_log" },
+      "itemId": "viewLog"
+    },
+    {
+      "displayName": "Default PDF",
+      "icon": "filePDF",
+      "class": "menu-separator",
+      "data": { "eventid": "setDefaultForSaveAsPDF" }
+    },
+    {
+      "displayName": "Edit",
+      "icon": "edit",
+      "data": {
+        "eventid": "edit"
+      }
+    },
+    {
+      "displayName": "Rename",
+      "icon": "rename",
+      "data": {
+        "eventid": "rename"
+      }
+    },
+    {
+      "displayName": "Duplicate",
+      "icon": "duplicate",
+      "data": {
+        "eventid": "duplicate"
+      }
+    },
+    {
+      "displayName": "Delete",
+      "icon": "delete",
+      "data": {
+        "eventid": "delete"
+      }
+    }
+  ]

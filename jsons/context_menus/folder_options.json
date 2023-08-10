@@ -1,0 +1,98 @@
+[
+    {
+      "displayName": "Create",
+      "class": "menu-separator",
+      "icon": "add",
+      "items": [
+        {
+          "displayName": "DITA Topic",
+          "data": {
+            "eventid": "create_new.topic"
+          },
+          "icon": "fileAdd",
+          "permissions": ["create"],
+          "roles": ["publishers", "authors"]
+        },
+        {
+          "displayName": "DITA Map",
+          "data": {
+            "eventid": "create_new.map"
+          },
+          "icon": "breakdownAdd",
+          "permissions": ["create"],
+          "class": "menu-separator",
+          "roles": ["publishers", "authors"]
+        },
+        {
+          "displayName": "Folder",
+          "data": {
+            "eventid": "create_new.folder"
+          },
+          "icon": "folderAdd",
+          "permissions": ["create"]
+        },
+        {
+          "displayName": "Markdown Topic",
+          "data": {
+            "eventid": "create_new.md"
+          },
+          "icon": "fileMarkdown", 
+          "permissions": ["create"]
+        }
+      ]
+    },
+    {
+      "displayName": "Upload Assets",
+      "data": {
+        "eventid": "uploadAssets"
+      },
+      "icon": "uploadToCloud",
+      "permissions": ["create"],
+      "roles": ["publishers", "authors"],
+      "class": "menu-separator"
+    },
+    {
+      "displayName": "Find Files in Folder",
+      "data": {
+        "eventid": "find_files_in_folder"
+      },
+      "icon": "search"
+    },
+    {
+      "displayName": "Refresh",
+      "data": {
+        "eventid": "refresh"
+      },
+      "icon": "refresh"
+    },
+    {
+      "displayName": "Collapse All",
+      "data": {
+        "eventid": "collapseAll"
+      },
+      "icon": "treeCollapseAll"
+    },
+    {
+      "displayName": "Add to Favorites",
+      "icon": "collectionAdd",
+      "data": {
+        "eventid": "addToCollection"
+      }
+    },
+    {
+      "displayName": "Remove from Favorites",
+      "icon": "collectionExclude",
+      "data": {
+        "eventid": "removeFromCollection"
+      }
+    },
+    {
+      "displayName": "View in Assets UI",
+      "class": "menu-separator",
+      "icon": "alias",
+      "data": {
+        "eventid": "view_in_assets_ui"
+      }
+    }
+  ]
+  

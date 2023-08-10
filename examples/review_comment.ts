@@ -1,59 +1,7 @@
-import _ from 'appSrc/libs/lodash'
-
 export enum VIEW_STATE {
   APPEND = 'append',
   PREPEND = 'prepend',
   REPLACE = 'replace',
-}
-
-export type ExtentionTarget = {
-  key?: string
-  value?: string
-  index?: number
-  viewState: VIEW_STATE
-  multiple?: boolean
-}
-
-export type ViewItem = {
-  component?: string
-  label?: string
-  className?: string
-  'on-click'?: string
-  variant?: string
-  quiet?: boolean
-  items?: ExtentionViewItems[]
-  index?: number
-  id?: string
-  headerTitle?: string
-}
-
-export type ExtentionViewItems = ViewItem & {target: ExtentionTarget}
-export type ExtentionView =  { items: ExtentionViewItems[]; className?: string }
-export type ExtentionTargetAsArg = Required<Pick<ExtentionTarget, 'key' | 'value' | 'viewState'>> &
-  Pick<ExtentionTarget, 'multiple'>
-export type ExtentionController = Record<string, (...args: unknown[]) => unknown>
-export type ExtentionTabView = {
-  id:string,
-  tabs:{
-    id:string
-    component?:'tab'
-    title: string
-    icon: string
-  }[]
-  tabPanels: {
-    tabId:string
-    component?:"tabPanel"
-    items:ViewItem[]
-  }[]
-}
-export type Extention = {
-  id: string
-  view?: ExtentionView
-  controller?: ExtentionController
-  tabView?: ExtentionTabView
-  model?: {
-    deps: string[]
-  }
 }
 
 const controllerId =  {

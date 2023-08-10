@@ -1,0 +1,226 @@
+[
+
+    {
+      "displayName": "Find in Map",
+      "data": {
+          "eventid": "findInMap"
+      },
+      "icon": "search",
+      "class": ["icon-reverse", "menu-separator"]
+    },
+    {
+      "displayName": "Select All",
+      "data": {
+          "eventid": "selectAll"
+      },
+      "icon": "selectBoxAll"
+    },
+    {
+        "displayName": "Clear Selection",
+        "data": {
+            "eventid": "clearSelection"
+        },
+        "icon": "remove",
+        "class": "menu-separator"
+    },
+    {
+      "displayName": "Checkout and Lock",
+      "data": {
+          "eventid": "mapCheckout"
+      },
+      "icon": "lockClosed"
+    },
+    {
+      "displayName": "Cancel Checkout and Unlock",
+      "data": {
+          "eventid": "mapUndoCheckOut"
+      },
+      "icon": "lockOpen"
+    },
+    {
+      "displayName": "Save as New Version and Unlock",
+      "data": {
+          "eventid": "mapCheckin"
+      },
+      "icon": "dataUpload",
+      "class": "menu-separator"
+    },
+    {
+      "displayName": "Edit",
+      "data": {
+        "eventid": "open_file"
+      },
+      "icon": "edit"
+    },
+    {
+      "displayName": "Check in",
+      "data": {
+        "eventid": "file_checkin"
+      },
+      "icon": "lockOpen",
+      "class": "menu-separator"
+    },
+    {
+      "displayName": "Check out",
+      "data": {
+        "eventid": "file_checkout"
+      },
+      "icon": "lockClosed",
+      "class": "menu-separator"
+    },
+    {
+      "displayName": "Preview",
+      "class": "menu-separator",
+      "icon": "preview",
+      "data": {
+        "eventid": "preview"
+      }
+    },
+    {
+      "displayName": "Copy",
+      "class": "menu-separator",
+      "icon": "copy",
+      "items": [
+        {
+          "displayName": "Copy UUID",
+          "icon": "copy",
+          "data": {
+            "eventid": "copyUUID"
+          }
+        },
+        {
+          "displayName": "Copy Path",
+          "icon": "copy",
+          "data": {
+            "eventid": "copyPath"
+          }
+        }
+      ]
+    },
+    {
+      "displayName": "Open in FrameMaker",
+      "class": "menu-separator open-in-framemaker",
+      "icon": "preview",
+      "data": {
+        "eventid": "openInFrameMaker"
+      }
+    },
+    {
+      "displayName": "Locate in Repository",
+      "icon": "data",
+      "class": "menu-separator",
+      "data": {
+        "eventid": "locateInRepository"
+      }
+    },
+    {
+      "displayName": "Expand All",
+      "data": {
+        "eventid": "expandThis"
+      },
+      "icon": "treeExpandAll"
+    },
+    {
+      "displayName": "Collapse All",
+      "data": {
+        "eventid": "collapseThis"
+      },
+      "icon": "treeCollapseAll",
+      "class": "menu-separator"
+    },
+    {
+      "displayName": "Expand All",
+      "data": {
+        "eventid": "expandAll"
+      },
+      "icon": "treeExpandAll"
+    },
+    {
+      "displayName": "Collapse All",
+      "data": {
+        "eventid": "collapseAll"
+      },
+      "icon": "treeCollapseAll",
+      "class": "menu-separator"
+    },
+    {
+      "displayName": "Add to Favorites",
+      "icon": "collectionAdd",
+      "data": {
+        "eventid": "addToFav"
+      }
+    },
+    {
+      "displayName": "Add to",
+      "icon": "add",
+      "class": "menu-separator",
+      "items": [
+        {
+          "displayName": "Favorites",
+          "icon": "collectionAdd",
+          "data": {
+            "eventid": "addToCollection"
+          }
+        },
+        {
+          "displayName": "Reusable Contents",
+          "icon": "linkPage",
+          "data": {
+            "eventid": "addToConRef"
+          }
+        }
+      ]
+    },
+    {
+      "displayName": "Remove from Favorites",
+      "icon": "collectionExclude",
+      "data": {
+        "eventid": "removeFromCollection"
+      }
+    },
+  
+    {
+      "displayName": "Properties...",
+      "data": {
+        "eventid": "show_properties"
+      },
+      "icon": "properties",
+      "class": "menu-separator"
+    },
+    {
+      "displayName": "Open Map dashboard",
+      "data": {
+        "eventid": "open_map_dashboard"
+      },
+      "icon": "dashboard"
+    },
+    {
+      "displayName": "View in Assets UI",
+      "data": {
+        "eventid": "view_in_assets_ui"
+      },
+      "icon": "alias",
+      "class": "menu-separator"
+    },
+    {
+      "displayName": "Download as PDF",
+      "icon": "filePDF",
+      "data": {
+        "eventid": "saveAsPDF"
+      }
+    },
+    {
+      "displayName": "Generate Output",
+      "icon": "export",
+      "itemId": "publish_menu",
+      "class": "menu-separator"
+    },
+    {
+      "displayName": "Close",
+      "data": {
+        "eventid": "close"
+      },
+      "icon": "close",
+      "class": "menu-separator"
+    }
+  ]
