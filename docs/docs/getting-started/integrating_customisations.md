@@ -32,6 +32,8 @@ npx @adobe/create-guides-extension
     `Name`: categories
     `Type`: String []
     `Value`: apps.fmdita.review_overrides, apps.fmdita.xml_editor.page_overrides
+  ![image](https://github.com/adobe/guides-extension/assets/35689029/0c5a5ca4-4214-4251-83e4-d9d7c7378dc2)
+
 - To add the built js, create a new file, say, `tcx1.js` in the above created node. Here, add the code from `dist/guides-extension.umd.cjs` or `dist/guides-extension.js`. Now create a new file `js.txt`, here we add the name of our js file, which in this case would be:
 ```t
 #base=.
