@@ -1,0 +1,98 @@
+{
+    "id": "review_left_panel_topics",
+    "class": "ditamap-viewer-panel",
+    "component": "blockGroup",
+    "items": [
+      {
+        "component": "inlineGroup",
+        "show": "@authorView",
+        "extraclass": "review-header",
+        "items": [
+          {
+            "component": "button",
+            "icon": "chevronLeft",
+            "on-click": "showReviewPanel",
+          },
+          {
+            "component": "label",
+            "label": "@reviewTitle",
+            "extraclass": ["label-text", "overflow-ellipses"]
+          },
+          {
+            "component": "button",
+            "icon": "viewOptions",
+            "extraclass": ["more-options"],
+            "on-click": "showReviewTopicsOptions"
+          }
+        ]
+      },
+      {
+        "component": "inlineGroup",
+        "hide": "@authorView",
+        "extraclass": ["review-search", "search-padding"],
+        "items": [
+          {
+            "component": "search",
+            "extraclass": "search-box",
+            "placeholder": "Search",
+            "on-change": "searchTopics",
+            "data": "@searchText",
+            "enabled": "@topicsInit"
+          },
+          {
+            "component": "button",
+            "icon": "viewOptions",
+            "extraclass": ["more-options"],
+            "on-click": "showReviewTopicsOptions",
+            "enabled": "@topicsInit"
+          }
+        ]
+      },
+      {
+        "component": "div",
+        "extraclass": ["p-4", "w-64"],
+        "hide": "@topicsInit",
+        "items": [{ "component": "widget", "id": "loading_shimmer" }]
+      },
+      {
+        "component":"div",
+        "show": "@emptyPanel",
+        "extraclass": ["empty-panel", "empty-topics"],
+        "items": [
+          {
+            "component": "icon",
+            "icon": "noReview"
+          },
+          {
+            "component": "label",
+            "extraclass": "sub-heading",
+            "label": "No topic found for the selected review task."
+          }
+        ]
+      },
+      {
+        "component": "tree",
+        "on-expandEvent": "ditamapItemExpanded",
+        "extraclass": ["review-tree", "ditamap-tree"],
+        "show": "@topicsInit",
+        "data": "map.items",
+        "selectedItems": "@selectedItems",
+        "multiselect": false,
+        "focusTo": "@focusTo",
+        "uniqKey": "uniqKey",
+        "itemConfig": {
+          "id": "review_left_panel_item",
+          "component": "widget",
+          "inputModelKey": ["props", "uniqKey"]
+        }
+      },
+      {
+        "id": "panel_resize_bar",
+        "component": "widget",
+        "inputModel": {
+          "selector": ".ditamap-viewer-panel",
+          "direction": "right"
+        }
+      }
+    ]
+  }

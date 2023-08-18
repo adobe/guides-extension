@@ -1,0 +1,141 @@
+{
+    "component": "blockGroup",
+    "id": "comment_reply",
+    "extraclass": ["comment-reply", "@replyId"],
+    "items": [
+        {
+            "component": "blockGroup",
+            "extraclass": "reply-header",
+            "items": [
+                {
+                    "component": "blockGroup",
+                    "extraclass": "reply-heading-user",
+                    "items": [
+                        {
+                            "component": "image",
+                            "extraclass": "user-image",
+                            "src": "@thumbnail"
+                        },
+                        {
+                            "component": "label",
+                            "extraclass": "user-name",
+                            "label": "@user"
+                        }
+                    ]
+                },
+                {
+                    "component": "blockGroup",
+                    "extraclass": "options-ellipsis",
+                    "items": [
+                        {
+                            "component": "button",
+                            "show": "@editable",
+                            "extraclass": "reply-ellipsis",
+                            "icon": "more",
+                            "on-click": "showMoreOptions"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "component": "label",
+            "extraclass": "date-time",
+            "label": "@dateTime"
+        },
+        {
+            "component": "label",
+            "extraclass": "reply-content",
+            "hideClass": "@editing"
+        },
+        {
+            "component": "widget",
+            "id": "attachment_tiles",
+            "show": "@showAttachmentTiles",
+            "inputModel": {"attachments": "@attachments", "editable": "@editable"},
+            "replyId": "@replyId"
+        },
+        {
+            "component": "div",
+            "extraclass": "edit-reply",
+            "showClass": "@editing",
+            "on-blur": "uneditReply",
+            "items": [
+                {
+                    "component": "blockGroup",
+                    "class": "comment-block",
+                    "extraclass": "@textAreaClass",
+                    "items": [
+                        {
+                            "component": "textarea",
+                            "extraclass": "edit-textfield",
+                            "data": "@reply",
+                            "on-keyup": {
+                                "name": "submitReply",
+                                "eventArgs": {
+                                    "keys": [
+                                        "ENTER"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "component": "widget",
+                            "id": "file_upload",
+                            "on-blur": "uneditReply",
+                            "tabindex": "0",
+                            "inputModel": {
+                                "commentId": "@commentId",
+                                "replyId": "@replyId"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "component": "widget",
+                    "id": "attachment_tiles",
+                    "hide": {
+                        "key": "@attachments.length",
+                        "values": [
+                          0
+                        ],
+                        "type": "boolean"
+                      },
+                    "inputModel": {"attachments": "@attachments", "editable": "@editable"},
+                    "replyId": "@replyId",
+                    "tabindex": "0"
+                },
+                {
+                    "component": "selectlist",
+                    "data": "@replySelectedAttachments",
+                    "hide": {
+                        "key": "@replySelectedAttachments.length",
+                        "values": [
+                          0
+                        ],
+                        "type": "boolean"
+                      },
+                    "itemConfig": {
+                        "component": "widget",
+                        "id": "attachment_list_item",
+                        "isReply": true,
+                        "replyId": "@replyId"
+                    }
+                },
+                {
+                    "component": "buttonGroup",
+                    "extraclass": "post-reply-controls",
+                    "items": [
+                      {
+                        "component": "button",
+                        "label": "Submit",
+                        "disabled": "@disableSubmitReply",
+                        "extraclass": "submit-button",
+                        "on-click": "submitReply"
+                      }
+                    ]
+                  }
+            ]
+        }
+    ]
+}
