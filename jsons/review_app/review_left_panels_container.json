@@ -1,7 +1,6 @@
 {
     "id": "review_left_panels_container",
     "extraclass": "review-left-panels-wrapper",
-    "defaultTabId": "review_left_panel_topics",
     "component": "blockGroup",
     "items": [
       {
@@ -10,15 +9,12 @@
         "activeTabId": "review_left_panel_topics",
         "orientation": "vertical",
         "bodyClass": "@showHideClass",
-        "lazyRender": false,
         "tabs": [
           {
             "component": "tab",
             "id": "review_left_panel_topics",
             "on-click": "tabClick",
-            "on-dragenter": "selectTab",
             "icon": "taskList",
-            "title": "Topics view",
             "extraclass": ["@showSelected"]
           }
         ],

@@ -9,11 +9,6 @@
                     "component": "button",
                     "icon": "adobeExperienceManagerV2",
                     "extraclass": "pointer-events-none",
-                    "title": "Guides",
-                    "label": "Guides",
-                    "variant": "action",
-                    "quiet": true,
-                    "iconsize": "L"
                 },
                 {
                     "component": "buttonGroup",
@@ -23,7 +18,6 @@
                             "component": "button",
                             "label": "Close",
                             "extraclass": "close-button",
-                            "variant": "cta",
                             "on-click": "close"
                         }
                     ]

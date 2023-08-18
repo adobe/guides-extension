@@ -45,7 +45,6 @@
                     "show": "@oldVersion",
                     "icon": "history",
                     "extraclass": "@historyIconClass",
-                    "title": "@historyIconToolTip",
                     "on-click": "toggleDiffView"
                   },
                   {
@@ -53,8 +52,7 @@
                     "show": "@editable",
                     "extraclass": "review-ellipsis",
                     "icon": "more",
-                    "title": "Options",
-                    "on-click": "showMoreOptions",
+                    "on-click": "showMoreOptions"
                   }
                 ]
               },
@@ -66,17 +64,15 @@
                 "items": [
                   {
                     "component": "button",
-                    "show": "@oldVersion", // remove?
+                    "show": "@oldVersion", 
                     "icon": "history",
-                    "extraclass": "@historyIconClass",  // extraclass === dynamic
-                    "title": "@historyIconToolTip"
+                    "extraclass": "@historyIconClass",  
                   },
                   {
                     
                     "component": "button",
                     "icon": "@acceptIcon",
-                    "extraclass": "hover-item",  // same extraclasses
-                    "title": "Accept comment",
+                    "extraclass": "hover-item",  
                     "value": "accepted",
                     "on-click": "accept"
                   },
@@ -84,7 +80,6 @@
                     "component": "button",
                     "icon": "@rejectIcon",
                     "extraclass": "hover-item",
-                    "title": "Reject comment",
                     "value": "rejected",
                     "on-click": "reject"
                   },
@@ -93,7 +88,6 @@
                     "show": "@editable",
                     "extraclass": ["review-ellipsis", "hover-item"],
                     "icon": "more",
-                    "title": "Options",
                     "on-click": "showMoreOptions"
                   }
                 ]
@@ -174,10 +168,7 @@
                 "items": [
                   {
                     "component": "button",
-                    "label": "Submit",
                     "extraclass": "submit-button",
-                    "variant": "primary",
-                    "quiet": true,
                     "on-click": "submitEditComment"
                   }
                 ]
@@ -196,8 +187,6 @@
                   {
                     "extraclass": "comment-type",
                     "icon": "@commentTypeIcon",
-                    "quiet": true,
-                    "title": "@commentTypeToolTip",
                     "component": "button"
                   },
                   {
@@ -235,8 +224,6 @@
         "hide": "@hideReplyLabel",
         "on-blur": "uneditComment",
         "extraclass": "reply-list-container",
-        "multiple": false,
-        "activeTabId": "undefined",
         "items": [
           {
             "label": "@replyLabel",

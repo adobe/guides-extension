@@ -9,7 +9,7 @@
             "items": [
                 {
                     "component": "label",
-                    "label": "Comments"  // extraclass
+                    "label": "Comments" 
                 }
             ]
         },
@@ -24,7 +24,7 @@
             "items": [
                 {
                     "component": "icon",
-                    "icon": "newComment"  // extraclass
+                    "icon": "newComment" 
                 },
                 {
                     "component": "label",
@@ -50,28 +50,24 @@
                                 {
                                     "component": "button",
                                     "icon": "revert",
-                                    "title": "Revert topic to review version", // extraclass
                                     "on-click": "revertToReviewVersion"
                                 },
                                 {
                                     "component": "button",
-                                    "icon": "compare",   // extraclass
-                                    "title": "Side by side view",
+                                    "icon": "compare",   
                                     "value": "preview",
                                     "on-click": "togglePreview"
                                 },
                                 {
                                     "component": "button",
                                     "icon": "experienceImport",
-                                    "hide": "@reviewCompleted",  //remove?
-                                    "title": "Import comments into author view",
+                                    "hide": "@reviewCompleted",  
                                     "on-click": "importComments"
                                 },
                                 {
                                     "component": "button",
                                     "icon": "downloadFromCloud",
-                                    "title": "Download all attachments",
-                                    "on-click": "downloadAttachment" // extraclass
+                                    "on-click": "downloadAttachment" 
                                 }
                             ]
                         },
@@ -84,8 +80,7 @@
                                 {
                                     "component": "button",
                                     "icon": "infoOutline",
-                                    "on-click": "showInfo",
-                                    "label": "Review details" // extraclass
+                                    "on-click": "showInfo"
                                 }
                             ]
                         }
@@ -116,7 +111,6 @@
                             "component": "button",
                             "extraclass": "@filterButtonClass",
                             "icon": "filter",
-                            "title": "Filter comments",
                             "on-click": "filterComments"
                         }
                     ]

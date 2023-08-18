@@ -12,34 +12,26 @@
                 {
                     "component": "button",
                     "icon": "highlight",
-                    "title": "Highlight",
                     "value": "highlight",
-                    "metadata": "highlight",
-                    "on-click": "annotationSelected" // extraclass
+                    "on-click": "annotationSelected" 
                 },
                 {
                     "component": "button",
                     "icon": "textStrikethrough",
-                    "title": "Strikethrough",
                     "value": "strikethrough",
-                    "metadata": "strikethrough",
-                    "on-click": "annotationSelected" // extraclass
+                    "on-click": "annotationSelected"
                 },
                 {
                     "component": "button",
                     "icon": "textAdd",
-                    "title": "Insert text",
                     "value": "insertext",
-                    "metadata": "insertext",
-                    "on-click": "annotationSelected" // extraclass
+                    "on-click": "annotationSelected"
                 },
                 {
                     "component": "button",
                     "icon": "comment",
-                    "title": "Add comment",
                     "value": "addcomment",
-                    "metadata": "addcomment",
-                    "on-click": "annotationSelected" // extraclass
+                    "on-click": "annotationSelected" 
                 }
             ]
         }
