@@ -3,7 +3,6 @@
     "id": "review_left_panel_item",
     "data-path": "@props.href",
     "data-type": "@props.type",
-    "uniqKey": "@uniqKey",
     "extraclass": [ "ditamap-viewer-item", "tree-item-content", "@selectionClass", "review-panel-item" ],
     "items": [
       {
@@ -14,9 +13,7 @@
         "items": [
           {
             "extraclass": [ "tree-item-linkicon", "broken" ],
-            "show": "@isDeleted",
             "component": "div",
-            "title": "File is deleted",
             "items": [ { "component": "icon", "icon": "close", "size": "XS" } ]
           },
           {
@@ -40,7 +37,6 @@
               {
                 "component": "div",
                 "class": "comment-count",
-                "show": ["@inReview", "@showCount"],
                 "items": [
                   {
                     "component":"label",

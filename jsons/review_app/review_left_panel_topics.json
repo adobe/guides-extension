@@ -5,7 +5,6 @@
     "items": [
       {
         "component": "inlineGroup",
-        "show": "@authorView",
         "extraclass": "review-header",
         "items": [
           {
@@ -15,7 +14,6 @@
           },
           {
             "component": "label",
-            "label": "@reviewTitle",
             "extraclass": ["label-text", "overflow-ellipses"]
           },
           {
@@ -28,35 +26,29 @@
       },
       {
         "component": "inlineGroup",
-        "hide": "@authorView",
         "extraclass": ["review-search", "search-padding"],
         "items": [
           {
             "component": "search",
             "extraclass": "search-box",
-            "placeholder": "Search",
             "on-change": "searchTopics",
             "data": "@searchText",
-            "enabled": "@topicsInit"
           },
           {
             "component": "button",
             "icon": "viewOptions",
             "extraclass": ["more-options"],
             "on-click": "showReviewTopicsOptions",
-            "enabled": "@topicsInit"
           }
         ]
       },
       {
         "component": "div",
         "extraclass": ["p-4", "w-64"],
-        "hide": "@topicsInit",
         "items": [{ "component": "widget", "id": "loading_shimmer" }]
       },
       {
         "component":"div",
-        "show": "@emptyPanel",
         "extraclass": ["empty-panel", "empty-topics"],
         "items": [
           {
@@ -74,12 +66,8 @@
         "component": "tree",
         "on-expandEvent": "ditamapItemExpanded",
         "extraclass": ["review-tree", "ditamap-tree"],
-        "show": "@topicsInit",
         "data": "map.items",
         "selectedItems": "@selectedItems",
-        "multiselect": false,
-        "focusTo": "@focusTo",
-        "uniqKey": "uniqKey",
         "itemConfig": {
           "id": "review_left_panel_item",
           "component": "widget",

@@ -16,7 +16,6 @@
                     "items": [
                         {
                             "component": "button",
-                            "label": "Close",
                             "extraclass": "close-button",
                             "on-click": "close"
                         }
@@ -28,7 +27,6 @@
         {
             "component": "div",
             "extraclass": "review-toolbar",
-            "hide": "@actionsDisabled",
             "items": [
                 {
                     "component": "div",
@@ -36,7 +34,6 @@
                     "items": [
                         {
                             "component": "label",
-                            "label": "@reviewTitle",
                             "extraclass": "overflow-ellipses",
                             "title": "@reviewTitle"
                         }
@@ -48,17 +45,13 @@
                     "items": [
                         {
                             "component": "button",
-                            "show": "@showDocumentSwitch",
-                            "label": "Show Document View",
                             "extraclass": "view-button",
                             "variant": "action",
                             "on-click": "switchView"
                         },
                         {
                             "component": "button",
-                            "label": "@documentPreviewLabel",
                             "extraclass": "preview-button",
-                            "variant": "action",
                             "on-click": "switchPreview"
                         }
                     ]

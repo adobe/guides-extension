@@ -36,20 +36,16 @@
               },
               {
                 "component": "blockGroup",
-                "show": "@showOptions",
-                "hide": "@reviewCompleted",
                 "extraclass": "options-ellipsis",
                 "items": [
                   {
                     "component": "button",
-                    "show": "@oldVersion",
                     "icon": "history",
                     "extraclass": "@historyIconClass",
                     "on-click": "toggleDiffView"
                   },
                   {
                     "component": "button",
-                    "show": "@editable",
                     "extraclass": "review-ellipsis",
                     "icon": "more",
                     "on-click": "showMoreOptions"
@@ -58,7 +54,6 @@
               },
               {
                 "component": "buttonGroup",
-                "hide": ["@showOptions", "@reviewCompleted"],
                 "extraclass": "accept-reject",
                 "selected": "@commentStatus",
                 "items": [
@@ -85,7 +80,6 @@
                   },
                   {
                     "component": "button",
-                    "show": "@editable",
                     "extraclass": ["review-ellipsis", "hover-item"],
                     "icon": "more",
                     "on-click": "showMoreOptions"
@@ -107,7 +101,6 @@
           },
           {
             "component": "div",
-            "showClass": "@editing",
             "on-blur": "uneditComment",
             "extraclass": "edit-comment",
             "items": [
@@ -144,19 +137,11 @@
               {
                 "component": "widget",
                 "inputModel": { "attachments" : "@attachments", "editable" : "@editable"},
-                "id": "attachment_tiles",
-                "hide": {
-                  "key": "@attachments.length",
-                  "values": [
-                    0
-                  ],
-                  "type": "boolean"
-                }
+                "id": "attachment_tiles"
               },
               {
                 "component": "selectlist",
                 "data": "@selectedAttachments",
-                "hide":"@emptySelectedAttachments",
                 "itemConfig": {
                     "component": "widget",
                     "id": "attachment_list_item",
@@ -177,7 +162,6 @@
           },
           {
             "component": "blockGroup",
-            "hideClass": "@editing",
             "extraclass": "comment-body",
             "items": [
               {
@@ -206,14 +190,7 @@
               {
                 "component": "widget",
                 "inputModel": { "attachments" : "@attachments", "editable": "@editable"},
-                "id": "attachment_tiles",
-                "hide": {
-                  "key": "@attachments.length",
-                  "values": [
-                    0
-                  ],
-                  "type": "boolean"
-                }
+                "id": "attachment_tiles"
               }
             ]
           }
@@ -221,7 +198,6 @@
       },
       {
         "component": "accordion",
-        "hide": "@hideReplyLabel",
         "on-blur": "uneditComment",
         "extraclass": "reply-list-container",
         "items": [
@@ -231,7 +207,6 @@
               {
                 "component": "div",
                 "extraclass": "reply-list",
-                "hide":"@emptyReplies",
                 "data": "@replies",
                 "itemConfig": {
                   "component": "widget",
@@ -241,7 +216,6 @@
               {
                 "component": "widget",
                 "id": "comment_new_reply",
-                "hide": "@hideNewReply"
               }
             ]
           }

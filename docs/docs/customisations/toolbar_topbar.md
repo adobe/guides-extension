@@ -9,7 +9,7 @@ To customise the `topbar` and `toolbar`, we will be using the ids: `topbar` or `
 Below is a trivial example of toolbar customisation. Here, we have removed the `Insert Numbered List` button, and replaced the `Insert Paragraph` button with our own component using a customised on-click handler.
 
 ```js title = toolbar_customisation.js
-const topbarExtend = {
+const toolbarExtend = {
     id: "toolbar",
     view: {
         items: [

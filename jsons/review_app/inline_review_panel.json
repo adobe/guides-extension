@@ -20,7 +20,6 @@
                 "empty-topics",
                 "empty-comments"
             ],
-            "show": "@noReview",
             "items": [
                 {
                     "component": "icon",
@@ -36,7 +35,6 @@
         {
             "component": "blockGroup",
             "extraclass": "review",
-            "hide": "@noReview",
             "items": [
                 {
                     "component": "blockGroup",
@@ -61,7 +59,6 @@
                                 {
                                     "component": "button",
                                     "icon": "experienceImport",
-                                    "hide": "@reviewCompleted",  
                                     "on-click": "importComments"
                                 },
                                 {
@@ -93,7 +90,6 @@
                         {
                             "component": "search",
                             "extraclass": "search-box",
-                            "placeholder": "Search",
                             "on-keydown": [
                                 {
                                     "name": "doSearch",
@@ -119,13 +115,9 @@
                     "component": "div",
                     "extraclass": "review-comments",
                     "data": "@filteredItems",
-                    "uniqKey": "uniqKey",
                     "itemConfig": {
                         "component": "widget",
-                        "id": "review_comment",
-                        "showOptions": false,
-                        "hideAddAttachment": false,
-                        "hideCancelButton": false
+                        "id": "review_comment"
                     }
                 }
             ]

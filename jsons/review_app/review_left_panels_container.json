@@ -6,9 +6,6 @@
       {
         "component": "tabView",
         "on-change": "tabChange",
-        "activeTabId": "review_left_panel_topics",
-        "orientation": "vertical",
-        "bodyClass": "@showHideClass",
         "tabs": [
           {
             "component": "tab",
