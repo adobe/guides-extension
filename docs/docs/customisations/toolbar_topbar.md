@@ -3,11 +3,6 @@ sidebar_position: 4
 ---
 
 # Customising topbar and toolbar
----
-sidebar_position: 4
----
-
-# Customising topbar and toolbar
 
 To customise the `topbar` and `toolbar`, we will be using the ids: `topbar` or `toolbar`, and follow the same view, controller structure.
 
