@@ -1,4 +1,3 @@
-
 export const updatedProcessComments = function (data, topicIndex) {
   const newCommentEvents = ["highlight", "strikethrough", "addcomment", "insertext"]
   _.each(data, (event: any) => {
