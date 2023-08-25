@@ -6,7 +6,7 @@ import review_panel from './imgs/review_panel.png'
 import accept_with_modification_dialogue from './imgs/accept_with_modification_dialogue.png'
 import customised_review_panel from './imgs/customised_review_panel.png'
 
-In this package we have also provided some customisation examples. Below is a brief description for each of them.
+In this package we have also provided some customisation examples (available at `guides_extension/src`) . Below is a brief description for each of them.
 
 1. [Context Menu](./../../src/file_options.ts)
 In this example we have customised the `file_options` context menu, to remove the `Delete` and `Edit` options, and replace the `Duplicate` option with a `Download` option.

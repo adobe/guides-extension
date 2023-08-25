@@ -82,4 +82,4 @@ tcx1.css
 Check that all the above steps were performed correctly. 
 After adding your code to tcx.js, make sure to do a hard refresh (shift+refresh). 
 Now open AEM, do a right click and click `Inspect`
-Go to Sources and search for your `.js` (for eg: tcx1.js) file. Do a Control / Cmd + D to search for your file. If the `.js` file exists with the JS code you pasted from `dist/guides-extension.umd.cjs` or `dist/guides-extension.js`, your setup is complete
+Go to Sources and search for your `[node_name].js` (for eg: extensions.js) file. Do a Control / Cmd + D to search for your file. If the `.js` file exists with the JS code you pasted from `dist/guides-extension.umd.cjs` or `dist/guides-extension.js`, your setup is complete

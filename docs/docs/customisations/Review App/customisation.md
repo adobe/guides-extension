@@ -6,7 +6,7 @@ To ease the customisation of the review app we have provided some hooks listed a
 - id: `review_comment`
 - hook: `this.updateExtraProps`:
 
-As discussed [here](../basic_customisation), any new attribute added during customisation goes under `this.model.extraProps`. The method `updateExtraProps` allows you to add attributes to a review comment, handling the updation and storage of the added attribute on the server as well.
+As discussed [here](../../aem_guides_framework/basic_customisation.md), any new attribute added during customisation goes under `this.model.extraProps`. The method `updateExtraProps` allows you to add attributes to a review comment, handling the updation and storage of the added attribute on the server as well.
 
 #### Usage Example:
 

@@ -30,7 +30,7 @@ const listJSON =  {
 
 ```
 
-Usually itemConfig is a `widget`. To learn more about widgets go to [Widgets](../widgets)
+Usually itemConfig is a `widget`. To learn more about widgets go to [Widgets](../Widgets/basic_widget.md)
 
 The rendered list will look like this:
 
