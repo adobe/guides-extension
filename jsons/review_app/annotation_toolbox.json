@@ -1,0 +1,39 @@
+{
+    "id": "annotation_toolbox",
+    "component": "blockGroup",
+    "extraclass": "review-commenting",
+    "hide": "@disableCommenting",
+    "items": [
+        {
+            "component": "buttonGroup",
+            "extraclass": "review-annotations",
+            "value": "@selectedAnnotation",
+            "items": [
+                {
+                    "component": "button",
+                    "icon": "highlight",
+                    "value": "highlight",
+                    "on-click": "annotationSelected" 
+                },
+                {
+                    "component": "button",
+                    "icon": "textStrikethrough",
+                    "value": "strikethrough",
+                    "on-click": "annotationSelected"
+                },
+                {
+                    "component": "button",
+                    "icon": "textAdd",
+                    "value": "insertext",
+                    "on-click": "annotationSelected"
+                },
+                {
+                    "component": "button",
+                    "icon": "comment",
+                    "value": "addcomment",
+                    "on-click": "annotationSelected" 
+                }
+            ]
+        }
+    ]
+}

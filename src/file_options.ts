@@ -1,4 +1,4 @@
-import { VIEW_STATE } from "./review_comment"
+import { VIEW_STATE } from "./review_app_examples/review_comment"
 
 const fileOptions = {
     id: "file_options",

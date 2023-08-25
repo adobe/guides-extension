@@ -2,6 +2,8 @@
 sidebar_position: 3
 ---
 
+Extensions give you the opportunity to customise your AEM Guides app to better suit your needs. This extension framework is supported with AEM Guides v4.3 onwards.
+
 # Installation
 
 The easiest way to bootstrap AEM Guides framework installation is through cli
@@ -26,12 +28,12 @@ npx @adobe/create-guides-extension
     - `guides-extension.js`
     - `guides-extension.umd.cjs`
 
-- Go to `CRXDE`
+- Go to `CRXDE` `crx/de/index.jsp#/`
 - Under the `apps` folder, make a new node of the type `cq:ClientLibraryFolder`
 - In the `properties` of the node, select `Multi` add the following property
-    `Name`: categories
-    `Type`: String []
-    `Value`: apps.fmdita.review_overrides, apps.fmdita.xml_editor.page_overrides
+    Name: `categories`
+    Type: `String []`
+    Value: `apps.fmdita.review_overrides`, `apps.fmdita.xml_editor.page_overrides`
 - To add the built js, create a new file, say, `tcx1.js` in the above created node. Here, add the code from `dist/guides-extension.umd.cjs` or `dist/guides-extension.js`. Now create a new file `js.txt`, here we add the name of our js file, which in this case would be:
 ```t
 #base=.

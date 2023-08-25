@@ -1,0 +1,70 @@
+[
+    {
+      "displayName": "Edit",
+      "data": {
+        "eventID": "editBaseline"
+      },
+      "icon": "edit",
+      "class": [
+        "menu-separator"
+      ]
+    },
+    {
+      "displayName": "Duplicate",
+      "data": {
+        "eventID": "duplicateBaseline"
+      },
+      "icon": "duplicate",
+      "class": [
+        "menu-separator"
+      ]
+    },
+    {
+      "displayName": "Rename",
+      "data": {
+        "eventID": "renameBaseline"
+      },
+      "icon": "rename",
+      "class": [
+        "menu-separator"
+      ]
+    },
+    {
+      "displayName": "Delete",
+      "data": {
+        "eventID": "deleteBaseline"
+      },
+      "icon": "delete",
+      "class": [
+        "menu-separator"
+      ]
+    },
+    {
+      "displayName": "Manage Labels",
+      "data": {
+        "eventID": "manageLabels"
+      },
+      "icon": "labels",
+      "class": [
+        "menu-separator"
+      ]
+    },
+    {
+      "displayName": "Edit Properties",
+      "data": {
+        "eventID": "editProperty"
+      },
+      "icon": "properties",
+      "class": [
+        "menu-separator"
+      ]
+    },
+    {
+      "displayName": "Export baseline",
+      "data": {
+        "eventID": "exportBaselineAsCsv"
+      },
+      "icon": "export",
+      "class": []
+    }
+  ]

@@ -1,0 +1,62 @@
+{
+    "id": "review_toolbar",
+    "component": "div",
+    "items": [
+        {
+            "component": "blockGroup",
+            "items": [
+                {
+                    "component": "button",
+                    "icon": "adobeExperienceManagerV2",
+                    "extraclass": "pointer-events-none",
+                },
+                {
+                    "component": "buttonGroup",
+                    "extraclass": "close-button-group",
+                    "items": [
+                        {
+                            "component": "button",
+                            "extraclass": "close-button",
+                            "on-click": "close"
+                        }
+                    ]
+                }
+            ],
+            "extraclass": "navbar spectrum--darkest"
+        },
+        {
+            "component": "div",
+            "extraclass": "review-toolbar",
+            "items": [
+                {
+                    "component": "div",
+                    "extraclass": "review-title",
+                    "items": [
+                        {
+                            "component": "label",
+                            "extraclass": "overflow-ellipses",
+                            "title": "@reviewTitle"
+                        }
+                    ]
+                },
+                {
+                    "component": "buttonGroup",
+                    "extraclass": "view-button-group",
+                    "items": [
+                        {
+                            "component": "button",
+                            "extraclass": "view-button",
+                            "variant": "action",
+                            "on-click": "switchView"
+                        },
+                        {
+                            "component": "button",
+                            "extraclass": "preview-button",
+                            "on-click": "switchPreview"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

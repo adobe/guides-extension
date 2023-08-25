@@ -5,7 +5,7 @@ sidebar_position: 3
 # Text Field and Text Area
 
 To take text as an input, we use the components, text field and text area.
-The text area component in JUI represents a html `<textarea/>`.
+The text area component in JUI represents an html `<textarea/>`.
 
 ```js title="textArea.js"
 

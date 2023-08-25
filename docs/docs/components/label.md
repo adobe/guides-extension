@@ -4,8 +4,8 @@ sidebar_position: 2
 
 # Label
 
-To display any text or string, we use the componenent, label.
-The label component in JUI represents a html `<label/>`.
+To display any text or string, we use the component, label.
+The label component in JUI represents an html `<label/>`.
 
 Below is an example for adding a static label
 

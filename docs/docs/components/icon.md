@@ -5,7 +5,7 @@ sidebar_position: 4
 # Icon
 
 To display an icon we use the component, icon.
-The text area component in JUI represents a html `<icon/>`.
+The text area component in JUI represents an html `<icon/>`.
 
 Icons available at [Adobe Spectrum Icons](https://spectrum.adobe.com/page/icons/) are compatible with our app. 
 

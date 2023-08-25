@@ -1,0 +1,86 @@
+{
+    "id": "review_left_panel_topics",
+    "class": "ditamap-viewer-panel",
+    "component": "blockGroup",
+    "items": [
+      {
+        "component": "inlineGroup",
+        "extraclass": "review-header",
+        "items": [
+          {
+            "component": "button",
+            "icon": "chevronLeft",
+            "on-click": "showReviewPanel",
+          },
+          {
+            "component": "label",
+            "extraclass": ["label-text", "overflow-ellipses"]
+          },
+          {
+            "component": "button",
+            "icon": "viewOptions",
+            "extraclass": ["more-options"],
+            "on-click": "showReviewTopicsOptions"
+          }
+        ]
+      },
+      {
+        "component": "inlineGroup",
+        "extraclass": ["review-search", "search-padding"],
+        "items": [
+          {
+            "component": "search",
+            "extraclass": "search-box",
+            "on-change": "searchTopics",
+            "data": "@searchText",
+          },
+          {
+            "component": "button",
+            "icon": "viewOptions",
+            "extraclass": ["more-options"],
+            "on-click": "showReviewTopicsOptions",
+          }
+        ]
+      },
+      {
+        "component": "div",
+        "extraclass": ["p-4", "w-64"],
+        "items": [{ "component": "widget", "id": "loading_shimmer" }]
+      },
+      {
+        "component":"div",
+        "extraclass": ["empty-panel", "empty-topics"],
+        "items": [
+          {
+            "component": "icon",
+            "icon": "noReview"
+          },
+          {
+            "component": "label",
+            "extraclass": "sub-heading",
+            "label": "No topic found for the selected review task."
+          }
+        ]
+      },
+      {
+        "component": "tree",
+        "on-expandEvent": "ditamapItemExpanded",
+        "extraclass": ["review-tree", "ditamap-tree"],
+        "data": "map.items",
+        "selectedItems": "@selectedItems",
+        "itemConfig": {
+          "id": "review_left_panel_item",
+          "component": "widget",
+          "inputModelKey": ["props", "uniqKey"]
+        }
+      },
+      {
+        "id": "panel_resize_bar",
+        "component": "widget",
+        "inputModel": {
+          "selector": ".ditamap-viewer-panel",
+          "direction": "right"
+        }
+      }
+    ]
+  }

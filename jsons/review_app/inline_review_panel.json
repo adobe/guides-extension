@@ -1,0 +1,126 @@
+{
+    "id": "inline_review_panel",
+    "component": "blockGroup",
+    "extraclass": "inline-review-panel",
+    "items": [
+        {
+            "component": "div",
+            "extraclass": "panel-header",
+            "items": [
+                {
+                    "component": "label",
+                    "label": "Comments" 
+                }
+            ]
+        },
+        {
+            "component": "blockGroup",
+            "extraclass": [
+                "empty-panel",
+                "empty-topics",
+                "empty-comments"
+            ],
+            "items": [
+                {
+                    "component": "icon",
+                    "icon": "newComment" 
+                },
+                {
+                    "component": "label",
+                    "extraclass": "sub-heading",
+                    "label": "Select a review task to see the comments"
+                }
+            ]
+        },
+        {
+            "component": "blockGroup",
+            "extraclass": "review",
+            "items": [
+                {
+                    "component": "blockGroup",
+                    "extraclass": "review-toolbar",
+                    "items": [
+                        {
+                            "component": "buttonGroup",
+                            "extraclass": "review-panel-buttons",
+                            "value": "@selectedButtonValue",
+                            "items": [
+                                {
+                                    "component": "button",
+                                    "icon": "revert",
+                                    "on-click": "revertToReviewVersion"
+                                },
+                                {
+                                    "component": "button",
+                                    "icon": "compare",   
+                                    "value": "preview",
+                                    "on-click": "togglePreview"
+                                },
+                                {
+                                    "component": "button",
+                                    "icon": "experienceImport",
+                                    "on-click": "importComments"
+                                },
+                                {
+                                    "component": "button",
+                                    "icon": "downloadFromCloud",
+                                    "on-click": "downloadAttachment" 
+                                }
+                            ]
+                        },
+                        {
+                            "component": "div",
+                            "extraclass": [
+                                "info"
+                            ],
+                            "items": [
+                                {
+                                    "component": "button",
+                                    "icon": "infoOutline",
+                                    "on-click": "showInfo"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "component": "div",
+                    "extraclass": "review-top-box",
+                    "items": [
+                        {
+                            "component": "search",
+                            "extraclass": "search-box",
+                            "on-keydown": [
+                                {
+                                    "name": "doSearch",
+                                    "eventArgs": {
+                                        "keys": [
+                                            "ENTER"
+                                        ]
+                                    }
+                                }
+                            ],
+                            "on-change": "doSearch",
+                            "data": "@searchTerm"
+                        },
+                        {
+                            "component": "button",
+                            "extraclass": "@filterButtonClass",
+                            "icon": "filter",
+                            "on-click": "filterComments"
+                        }
+                    ]
+                },
+                {
+                    "component": "div",
+                    "extraclass": "review-comments",
+                    "data": "@filteredItems",
+                    "itemConfig": {
+                        "component": "widget",
+                        "id": "review_comment"
+                    }
+                }
+            ]
+        }
+    ]
+}

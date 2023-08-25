@@ -1,0 +1,32 @@
+{
+    "id": "review_left_panels_container",
+    "extraclass": "review-left-panels-wrapper",
+    "component": "blockGroup",
+    "items": [
+      {
+        "component": "tabView",
+        "on-change": "tabChange",
+        "tabs": [
+          {
+            "component": "tab",
+            "id": "review_left_panel_topics",
+            "on-click": "tabClick",
+            "icon": "taskList",
+            "extraclass": ["@showSelected"]
+          }
+        ],
+        "tabPanels": [
+          {
+            "component": "tabPanel",
+            "tabId": "review_left_panel_topics",
+            "items": [
+              {
+                "component": "widget",
+                "id": "review_left_panel_topics"
+              }
+            ]
+            }
+          ]
+        }
+      ]
+    }

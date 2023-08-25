@@ -1,0 +1,225 @@
+{
+    "id": "review_comment",
+    "component": "blockGroup",
+    "extraclass": ["review-comment", "@commentId"],
+    "on-click": "scrollIntoView",
+    "items": [
+      {
+        "component": "blockGroup",
+        "extraclass": "comment-block-container",
+        "items":[
+          {
+            "component": "blockGroup",
+            "extraclass": "comment-header",
+            "items": [
+              {
+                "component": "blockGroup",
+                "extraclass": "comment-heading-user",
+                "items": [
+                  {
+                    "component": "image",
+                    "extraclass": "user-image",
+                    "data": "@thumbnail"
+                  },
+                  {
+                    "component": "blockGroup",
+                    "extraclass": "review-info",
+                    "items": [
+                      {
+                        "component": "label",
+                        "extraclass": "reviewer-name",
+                        "label": "@user"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "component": "blockGroup",
+                "extraclass": "options-ellipsis",
+                "items": [
+                  {
+                    "component": "button",
+                    "icon": "history",
+                    "extraclass": "@historyIconClass",
+                    "on-click": "toggleDiffView"
+                  },
+                  {
+                    "component": "button",
+                    "extraclass": "review-ellipsis",
+                    "icon": "more",
+                    "on-click": "showMoreOptions"
+                  }
+                ]
+              },
+              {
+                "component": "buttonGroup",
+                "extraclass": "accept-reject",
+                "selected": "@commentStatus",
+                "items": [
+                  {
+                    "component": "button",
+                    "show": "@oldVersion", 
+                    "icon": "history",
+                    "extraclass": "@historyIconClass",  
+                  },
+                  {
+                    
+                    "component": "button",
+                    "icon": "@acceptIcon",
+                    "extraclass": "hover-item",  
+                    "value": "accepted",
+                    "on-click": "accept"
+                  },
+                  {
+                    "component": "button",
+                    "icon": "@rejectIcon",
+                    "extraclass": "hover-item",
+                    "value": "rejected",
+                    "on-click": "reject"
+                  },
+                  {
+                    "component": "button",
+                    "extraclass": ["review-ellipsis", "hover-item"],
+                    "icon": "more",
+                    "on-click": "showMoreOptions"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "component": "blockGroup",
+            "extraclass": "more-review-info",
+            "items": [
+              {
+                "component": "label",
+                "extraclass": "date-time",
+                "label": "@dateTime"
+              }
+            ]
+          },
+          {
+            "component": "div",
+            "on-blur": "uneditComment",
+            "extraclass": "edit-comment",
+            "items": [
+              {
+                "component": "blockGroup",
+                "class": "comment-block",
+                "extraclass": "@textAreaClass",
+                "items": [
+                  {
+                    "component": "textarea",
+                    "extraclass": "edit-textfield",
+                    "id": "edit_reply",
+                    "data": "@comment",
+                    "on-keyup": {
+                      "name": "submitEditComment",
+                      "eventArgs": {
+                        "keys": [
+                          "ENTER"
+                        ]
+                      }
+                    },
+                    "stopKeyPropagation": true
+                  },
+                  {
+                    "component": "widget",
+                    "id": "file_upload", 
+                    "on-blur": "uneditComment",
+                    "inputModel":{
+                      "commentId":"@commentId"
+                    }
+                  }
+                ]
+              },
+              {
+                "component": "widget",
+                "inputModel": { "attachments" : "@attachments", "editable" : "@editable"},
+                "id": "attachment_tiles"
+              },
+              {
+                "component": "selectlist",
+                "data": "@selectedAttachments",
+                "itemConfig": {
+                    "component": "widget",
+                    "id": "attachment_list_item",
+                    "tabindex": 0
+                }
+              },
+              {
+                "component": "buttonGroup",
+                "items": [
+                  {
+                    "component": "button",
+                    "extraclass": "submit-button",
+                    "on-click": "submitEditComment"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "component": "blockGroup",
+            "extraclass": "comment-body",
+            "items": [
+              {
+                "component": "blockGroup",
+                "extraclass": "comment-body-header",
+                "items": [
+                  {
+                    "extraclass": "comment-type",
+                    "icon": "@commentTypeIcon",
+                    "component": "button"
+                  },
+                  {
+                    "component": "label",
+                    "extraclass": "comment-selection",
+                    "data": "@selection"
+                  }
+                ]
+              },
+              {
+                "component": "label",
+                "extraclass": [
+                  "comment-content",
+                  "@emptySelectionClass"
+                ]
+              },
+              {
+                "component": "widget",
+                "inputModel": { "attachments" : "@attachments", "editable": "@editable"},
+                "id": "attachment_tiles"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "component": "accordion",
+        "on-blur": "uneditComment",
+        "extraclass": "reply-list-container",
+        "items": [
+          {
+            "label": "@replyLabel",
+            "items": [
+              {
+                "component": "div",
+                "extraclass": "reply-list",
+                "data": "@replies",
+                "itemConfig": {
+                  "component": "widget",
+                  "id": "comment_reply"
+                }
+              },
+              {
+                "component": "widget",
+                "id": "comment_new_reply",
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }

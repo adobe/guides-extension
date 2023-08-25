@@ -4,7 +4,8 @@ sidebar_position: 1
 
 # Button
 
-The button component in JUI represents a html `<button/>`.
+To display a button we use the component, button.
+ The button component in JUI represents an html `<button/>`.
 
 ```js title="buttonJSON.js"
 const buttonJSON = {

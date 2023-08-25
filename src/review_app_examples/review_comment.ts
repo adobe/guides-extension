@@ -1,11 +1,10 @@
-
 export enum VIEW_STATE {
   APPEND = 'append',
   PREPEND = 'prepend',
   REPLACE = 'replace',
 }
 
-const controllerId =  {
+const reviewComment =  {
   id: 'review_comment',
   view: {
     items: [
@@ -18,7 +17,6 @@ const controllerId =  {
           value: 'user-image',
           viewState: VIEW_STATE.PREPEND,
         },
-
       },
       {
         component: 'div',
@@ -100,6 +98,7 @@ const controllerId =  {
               {
                 "component": "comboBox",
                 "data": "@extraProps.labels",
+                "extraclass": "severity-combobox",
                 "multiple": false,
                 "placeholder": "",
                 'value': "@extraProps.severity",
@@ -114,7 +113,7 @@ const controllerId =  {
             items: [
               {
                 component: 'label',
-                label: 'Comment Rationale: '
+                label: 'Comment Rationale'
               },
               {
                 component: "textarea",
@@ -163,8 +162,8 @@ const controllerId =  {
       this.model.extraProps = reqComment.extraProps
       this.model.extraProps.set("labels", ['None', 'CRITICAL', 'MAJOR', 'SUBSTANTATIVE', 'ADMINISTRATIVE'])
     },
-    udpateSomething(args){
-      debugger;
+
+    sendAcceptWithModificationProps(args){
       this.updateExtraProps(args)
     },
     changeSeverity: function(args) {
@@ -204,7 +203,7 @@ const controllerId =  {
       }
   }
 }
-export default controllerId
+export default reviewComment
 window.addEventListener('tcx-loaded',()=>{
-  tcx?.extension?.register(controllerId.id, controllerId);
+  tcx?.extension?.register(reviewComment.id, reviewComment);
 })

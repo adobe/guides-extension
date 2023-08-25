@@ -1,0 +1,250 @@
+[
+    {
+      "displayName": "Edit",
+      "data": {
+        "eventid": "open_file"
+      },
+      "icon": "edit",
+      "class": "menu-separator"
+    },
+    {
+      "displayName": "Duplicate",
+      "icon": "duplicate",
+      "class": "menu-separator",
+      "data": {
+        "eventid": "duplicate"
+      }
+    },
+    {
+      "displayName": "Check in",
+      "data": {
+        "eventid": "file_checkin"
+      },
+      "icon": "lockOpen",
+      "class": "menu-separator"
+    },
+    {
+      "displayName": "Check out",
+      "data": {
+        "eventid": "file_checkout"
+      },
+      "icon": "lockClosed",
+      "class": "menu-separator"
+    },
+    {
+      "displayName": "Preview",
+      "class": "menu-separator",
+      "icon": "preview",
+      "data": {
+        "eventid": "preview"
+      }
+    },
+    {
+      "displayName": "Move to",
+      "data": {
+        "eventid": "move"
+      },
+      "icon": "moveTo",
+      "class": "menu-separator"
+    },
+    {
+      "displayName": "Rename",
+      "data": {
+        "eventid": "rename"
+      },
+      "icon": "rename",
+      "class": "menu-separator"
+    },
+    {
+      "displayName": "Delete",
+      "data": {
+        "eventid": "delete"
+      },
+      "icon": "delete",
+      "class": "menu-separator"
+    },
+    {
+      "displayName": "Find in Map",
+      "class": ["menu-separator", "icon-reverse"],
+      "icon": "search",
+      "data": {
+        "eventid": "findInMap"
+      }
+    },
+    {
+      "displayName": "Copy",
+      "class": "menu-separator",
+      "icon": "copy",
+      "items": [
+        {
+          "displayName": "Copy UUID",
+          "icon": "copy",
+          "data": {
+            "eventid": "copyUUID"
+          }
+        },
+        {
+          "displayName": "Copy Path",
+          "icon": "copy",
+          "data": {
+            "eventid": "copyPath"
+          }
+        }
+      ]
+    },
+    {
+      "displayName": "Open in FrameMaker",
+      "class": "menu-separator open-in-framemaker",
+      "icon": "preview",
+      "data": {
+        "eventid": "openInFrameMaker"
+      }
+    },
+    {
+      "displayName": "Locate in Repository",
+      "icon": "data",
+      "class": "menu-separator",
+      "data": {
+        "eventid": "locateInRepository"
+      }
+    },
+    {
+      "displayName": "Expand All",
+      "data": {
+        "eventid": "expandThis"
+      },
+      "icon": "treeExpandAll"
+    },
+    {
+      "displayName": "Collapse All",
+      "data": {
+        "eventid": "collapseThis"
+      },
+      "icon": "treeCollapseAll",
+      "class": "menu-separator"
+    },
+    {
+      "displayName": "Expand All",
+      "data": {
+        "eventid": "expandAll"
+      },
+      "icon": "treeExpandAll"
+    },
+    {
+      "displayName": "Collapse All",
+      "data": {
+        "eventid": "collapseAll"
+      },
+      "icon": "treeCollapseAll",
+      "class": "menu-separator"
+    },
+    {
+      "displayName": "Add to Favorites",
+      "icon": "collectionAdd",
+      "data": {
+        "eventid": "addToFav"
+      }
+    },
+    {
+      "displayName": "Add to",
+      "icon": "add",
+      "class": "menu-separator",
+      "items": [
+        {
+          "displayName": "Favorites",
+          "icon": "collectionAdd",
+          "data": {
+            "eventid": "addToCollection"
+          }
+        },
+        {
+          "displayName": "Reusable Contents",
+          "icon": "linkPage",
+          "data": {
+            "eventid": "addToConRef"
+          }
+        }
+      ]
+    },
+    {
+      "displayName": "Remove from Favorites",
+      "icon": "collectionExclude",
+      "data": {
+        "eventid": "removeFromCollection"
+      }
+    },
+  
+    {
+      "displayName": "Properties...",
+      "data": {
+        "eventid": "show_properties"
+      },
+      "icon": "properties",
+      "class": "menu-separator"
+    },
+    {
+      "displayName": "Open Map dashboard",
+      "data": {
+        "eventid": "open_map_dashboard"
+      },
+      "icon": "dashboard"
+    },
+    {
+      "displayName": "View in Assets UI",
+      "data": {
+        "eventid": "view_in_assets_ui"
+      },
+      "icon": "alias",
+      "class": "menu-separator"
+    },
+    {
+      "displayName": "Download as PDF",
+      "icon": "filePDF",
+      "data": {
+        "eventid": "saveAsPDF"
+      }
+    },
+    {
+      "displayName": "Publish As",
+      "icon": "export",
+      "class": "menu-separator",
+      "items": [
+        {
+          "displayName": "Content Fragment",
+          "icon": "documentFragment",
+          "class": "menu-separator",
+          "data": {
+            "eventid": "createNewCF"
+          }
+        }
+      ]
+    },
+    {
+      "displayName": "Republish",
+      "icon": "export",
+      "data": {
+        "eventid": "republishFragment"
+      }
+    },
+    {
+      "displayName": "Quick Generate",
+      "icon": "export",
+      "class": "menu-separator",
+      "items": [
+        {
+          "displayName": "Quick Generate",
+          "icon": "export",
+          "itemId": "publish_menu"
+        },
+        {
+          "displayName": "Select Presets",
+          "icon": "export",
+          "class": "menu-separator",
+          "data": {
+            "eventid": "quickGenerate"
+          }
+        }
+      ]
+    }
+  ]
+  
