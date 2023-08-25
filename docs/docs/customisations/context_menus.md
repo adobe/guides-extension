@@ -7,35 +7,33 @@ sidebar_position: 3
 The following context menus can be customised: 
 - `file_options`
     controllers: 
-    - `ditamap_viewer_controller`
-    - `repository_panel_controller`
-    - `collection_tree_controller`
-    - `ditamap_viewer_item_controller`
-    - `file_references_links_controller`
-    - `fragment_references_links_controller`
-    - `repository_search_controller`
-    - `subject_scheme_tree_controller`
+    - Map view: `ditamap_viewer_controller`
+    - Repository Panel: `repository_panel_controller`
+    - Favorites Panel: `collection_tree_controller`
+    - File Properties Reference Links: `file_references_links_controller`
+    - Repository Search Panel: `repository_search_controller`
+    - Subject Scheme Panel: `subject_scheme_tree_controller`
 
 - `folder_options`
     controllers: 
-    - `repository_panel_controller`
-    - `collection_tree_controller`
+    - Repository Panel: `repository_panel_controller`
+    - Favorites Panel: `collection_tree_controller`
 
 - `collection_options`
     controllers: 
-    - `collection_tree_controller`
+    - Favorites Panel: `collection_tree_controller`
 
 - `map_view_options`
     controllers: 
-    - `ditamap_viewer_controller`
+    - Map view: `ditamap_viewer_controller`
 
 - `baseline_panel_menu`
     controllers:
-    - `baseline_panel`
+    - Baseline Panel: `baseline_panel`
 
 - `preset_item_menu`
     controllers:
-    - `preset_panel`
+    - Preset Panel: `preset_panel`
 
 You can also create your own context menu by defining a new unique id.
 
