@@ -20,7 +20,7 @@ In this example we have customised the `right tab panel` to have another `tab` t
 5. [toolbar](../../src/toolbar.ts)
 In this example we have replaced the `Insert Element`, `Insert Paragraph`, `Insert Numbered List`, `Insert Bulleted List` buttons with a single `More Insert Options` button containing all of these.
 
-[Review App Examples](/guides-extention/src/review_app_examples)
+[Review App Examples]
 1. [Annotation Toolbox](../../src/review_app_examples/annotation_extension.ts)
 In this example we have added another button to the annotation toolbox that opens the current review topic in AEM.
 
