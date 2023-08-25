@@ -2,6 +2,8 @@
 sidebar_position: 8
 ---
 
+# Examples
+
 import review_panel from './imgs/review_panel.png'
 import accept_with_modification_dialogue from './imgs/accept_with_modification_dialogue.png'
 import customised_review_panel from './imgs/customised_review_panel.png'
