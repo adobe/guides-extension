@@ -24,4 +24,4 @@ icons can also be added to buttons.
 
 The rendered icon will look like this:
 
-![icon](imgs/info_icon.png "Icon")
+![icon](./imgs/info_icon.png "Icon")

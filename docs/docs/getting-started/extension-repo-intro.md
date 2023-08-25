@@ -2,8 +2,7 @@
 sidebar_position: 3
 ---
 
-# Extension Repository Introduction
-## Extension Directory structure
+# Guides Extension Package Directory structure
 
 ```
 ├── src

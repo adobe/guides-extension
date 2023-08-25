@@ -1,5 +1,5 @@
 ---
-sidebar_position: 10
+sidebar_position: 4
 ---
 # Jui Framework
 
@@ -15,7 +15,7 @@ JUI-Core is the core library with all logic to convert JSON config to working re
 JUI-React-Spectrum  library has wrapper widgets of Adobe React Spectrum components
 ## JUI Core Design
 ### MVC UI Design
-![Alt text](../static/img/jui-mvc-flow.png)
+![Alt text](./imgs/jui-mvc-flow.png)
 ### Widget
   - Has a unique ID.
   - Has an individual JSON file for view.
@@ -25,7 +25,7 @@ JUI-React-Spectrum  library has wrapper widgets of Adobe React Spectrum compone
   - Can have other widgets
   - App is a Widgets
 
-![Alt text](../static/img/jui-widget.png)
+![Alt text](./imgs/jui-widget.png)
 ### Element
   - Is an HTML/React Component.
   - Does not have any model, its uses parent widget model.
@@ -56,4 +56,4 @@ JUI-React-Spectrum  library has wrapper widgets of Adobe React Spectrum compone
   - Subscribe(callback, eventHandler)
   - SubscribeAppModel(callback)
 ### Sample App design
-![Alt text](../static/img/jui-sample-app.png)
+![Alt text](./imgs/jui-sample-app.png)

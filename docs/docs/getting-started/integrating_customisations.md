@@ -6,7 +6,7 @@ import folderStructure from './../imgs/crxde_folder_structure.png'
 import folderProperties from './../imgs/crxde_folder_properties.png'
 
 
-# Integrating Customisations
+# Installing and Using the Guides Extension Package
 
 Extensions give you the opportunity to customise your AEM Guides app to better suit your needs. This extension framework is supported with AEM Guides v4.3 onwards.
 
@@ -40,10 +40,9 @@ npx @adobe/create-guides-extension
   src={buildOutput}
   title="Build Output"
   alt="build output"
-  width= "500px"
+  width= "650px"
   height="200px"
 />
-
 
 # Adding the customisation to AEM
 - Go to `CRXDE` `crx/de/index.jsp#/`

@@ -30,4 +30,4 @@ const labelJSON =  {
 
 The rendered label will look like this:
 
-![label](imgs/label.png "Label")
+![label](./imgs/label.png "Label")
