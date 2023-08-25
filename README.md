@@ -2,6 +2,16 @@
 
 > This is a starting point for creating extension Adobe AEM Guides. Minimum required guides version is 4.3.
 
+## Running the Documentation
+To run the documentation, in the `guides-extension/docs` directory, run the following commands:
+```bash
+npm run build
+npm run start
+```
+You can now access the documentation at default address: `localhost:3000/`
+
+## Using the package
+
 You can use this project as a starting point by downloading this from the repo or running the following command.
 ```bash
 npx @adobe/create-guides-extension

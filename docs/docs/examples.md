@@ -6,18 +6,18 @@ sidebar_position: 8
 
 In this package we have also provided some customisation examples. Below is a brief description for each of them.
 
-1. [context menu](./../../src/file_options.ts)
+1. [Context Menu](./../../src/file_options.ts)
 In this example we have customised the `file_options` context menu, to remove the `Delete` and `Edit` options, and replace the `Duplicate` option with a `Download` option.
 
-2. [left panel](../../src/left_panel_container.ts)
+2. [Left Panel](../../src/left_panel_container.ts)
 In this example we have customised the `left tab panel`` to have another `tab` titled "TEST EXTENSION", and a corresponding `tab panel` which has a label: `Test Tab Panel`
 
-3. [right panel](../../src/right_panel_container.ts)
+3. [Right Panel](../../src/right_panel_container.ts)
 In this example we have customised the `right tab panel` to have another `tab` titled "TEST EXTENSION", and a corresponding `tab panel` which has a label: `New Tab Panel`
 
-4. [repository panel](../../src/repository_panel.ts)
+4. [Repository Panel](../../src/repository_panel.ts)
 
-5. [toolbar](../../src/toolbar.ts)
+5. [Toolbar](../../src/toolbar.ts)
 In this example we have replaced the `Insert Element`, `Insert Paragraph`, `Insert Numbered List`, `Insert Bulleted List` buttons with a single `More Insert Options` button containing all of these.
 
 [Review App Examples]

@@ -1,7 +1,6 @@
 ---
-sidebar_position: 2
+sidebar_position: 10
 ---
-
 # Jui Framework
 
 Before going into how to write extensions we'll understand the arcitecture of the framework.
