@@ -2,9 +2,13 @@
 sidebar_position: 8
 ---
 
-## Examples
+# Examples
 
-In this package we have also provided some customisation examples. Below is a brief description for each of them.
+import review_panel from './imgs/review_panel.png'
+import accept_with_modification_dialogue from './imgs/accept_with_modification_dialogue.png'
+import customised_review_panel from './imgs/customised_review_panel.png'
+
+In this package we have also provided some customisation examples (available at `guides_extension/src`) . Below is a brief description for each of them.
 
 1. [Context Menu](./../../src/file_options.ts)
 In this example we have customised the `file_options` context menu, to remove the `Delete` and `Edit` options, and replace the `Duplicate` option with a `Download` option.
@@ -50,3 +54,19 @@ This file extends [Inline Review Panel](../../src/review_app_examples/inline_rev
 6. [Accept with Modification Dialog](../../src/review_app_examples/accept_with_modification_dialog.ts)
 
 This is an example of adding new widgets to the app. Here we have created a new dialogue, that has two input text fields: `Revised Text` and `Adjudicator Comment Rationale`
+
+<img
+  src={accept_with_modification_dialogue}
+  width= "300px"
+/>
+
+Here's the review panel before and after customisation:
+
+
+<img
+  src={review_panel}
+  width= "300"
+/>              <img
+  src={customised_review_panel}
+  width= "300"
+/>

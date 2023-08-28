@@ -1,0 +1,8 @@
+{
+    "label": "AEM Guides Framework",
+    "position": 8,
+    "link": {
+      "type": "generated-index",
+      "description": "Framework of AEM Guides"
+    }
+  }

@@ -6,7 +6,7 @@ import folderStructure from './../imgs/crxde_folder_structure.png'
 import folderProperties from './../imgs/crxde_folder_properties.png'
 
 
-# Integrating Customisations
+# Installing and Using the Guides Extension Package
 
 Extensions give you the opportunity to customise your AEM Guides app to better suit your needs. This extension framework is supported with AEM Guides v4.3 onwards.
 
@@ -40,10 +40,9 @@ npx @adobe/create-guides-extension
   src={buildOutput}
   title="Build Output"
   alt="build output"
-  width= "500px"
+  width= "650px"
   height="200px"
 />
-
 
 # Adding the customisation to AEM
 - Go to `CRXDE` `crx/de/index.jsp#/`
@@ -83,4 +82,4 @@ tcx1.css
 Check that all the above steps were performed correctly. 
 After adding your code to tcx.js, make sure to do a hard refresh (shift+refresh). 
 Now open AEM, do a right click and click `Inspect`
-Go to Sources and search for your `.js` (for eg: tcx1.js) file. Do a Control / Cmd + D to search for your file. If the `.js` file exists with the JS code you pasted from `dist/guides-extension.umd.cjs` or `dist/guides-extension.js`, your setup is complete
+Go to Sources and search for your `[node_name].js` (for eg: extensions.js) file. Do a Control / Cmd + D to search for your file. If the `.js` file exists with the JS code you pasted from `dist/guides-extension.umd.cjs` or `dist/guides-extension.js`, your setup is complete

@@ -29,4 +29,4 @@ This will produce a textArea where pressing ENTER will call the event `submitNam
 
 The rendered text-area will look like this:
 
-![text-area](imgs/text_area.png "Text area")
+![text-area](./imgs/text_area.png "Text area")
