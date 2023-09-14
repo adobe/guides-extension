@@ -61,7 +61,7 @@
                     "component": "button",
                     "show": "@oldVersion", 
                     "icon": "history",
-                    "extraclass": "@historyIconClass",  
+                    "extraclass": "@historyIconClass"
                   },
                   {
                     
@@ -215,7 +215,7 @@
               },
               {
                 "component": "widget",
-                "id": "comment_new_reply",
+                "id": "comment_new_reply"
               }
             ]
           }

@@ -12,7 +12,7 @@
             "id": "new_reply",
             "data": "@newReply",
             "on-click": {"name": "setfocus", "args": { "id": "new_reply" }},
-            "on-keyup": { "name": "newReplyAdded", "eventArgs": { "keys": [ "ENTER" ]} },
+            "on-keyup": { "name": "newReplyAdded", "eventArgs": { "keys": [ "ENTER" ]} }
           },
           {
             "component": "widget",
@@ -28,7 +28,7 @@
         "component": "selectlist",
         "itemConfig": {
           "component": "widget",
-          "id": "attachment_list_item",
+          "id": "attachment_list_item"
         }
       },
       {

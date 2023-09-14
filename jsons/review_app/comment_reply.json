@@ -104,7 +104,7 @@
                         "attachments": "@attachments",
                         "editable": "@editable"
                     },
-                    "replyId": "@replyId",
+                    "replyId": "@replyId"
                 },
                 {
                     "component": "selectlist",

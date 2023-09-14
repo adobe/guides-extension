@@ -10,7 +10,7 @@
           {
             "component": "button",
             "icon": "chevronLeft",
-            "on-click": "showReviewPanel",
+            "on-click": "showReviewPanel"
           },
           {
             "component": "label",
@@ -32,13 +32,13 @@
             "component": "search",
             "extraclass": "search-box",
             "on-change": "searchTopics",
-            "data": "@searchText",
+            "data": "@searchText"
           },
           {
             "component": "button",
             "icon": "viewOptions",
             "extraclass": ["more-options"],
-            "on-click": "showReviewTopicsOptions",
+            "on-click": "showReviewTopicsOptions"
           }
         ]
       },

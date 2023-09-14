@@ -8,7 +8,7 @@
                 {
                     "component": "button",
                     "icon": "adobeExperienceManagerV2",
-                    "extraclass": "pointer-events-none",
+                    "extraclass": "pointer-events-none"
                 },
                 {
                     "component": "buttonGroup",
