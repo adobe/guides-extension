@@ -1,98 +1,113 @@
 [
-    {
-      "displayName": "Create",
-      "class": "menu-separator",
-      "icon": "add",
-      "items": [
-        {
-          "displayName": "DITA Topic",
-          "data": {
-            "eventid": "create_new.topic"
-          },
-          "icon": "fileAdd",
-          "permissions": ["create"],
-          "roles": ["publishers", "authors"]
+  {
+    "displayName": "Create",
+    "class": "menu-separator",
+    "icon": "add",
+    "items": [
+      {
+        "displayName": "Topic Template",
+        "data": {
+          "eventid": "create_new.topic_template"
         },
-        {
-          "displayName": "DITA Map",
-          "data": {
-            "eventid": "create_new.map"
-          },
-          "icon": "breakdownAdd",
-          "permissions": ["create"],
-          "class": "menu-separator",
-          "roles": ["publishers", "authors"]
+        "icon": "fileAdd",
+        "class": "menu-separator"
+      },
+      {
+        "displayName": "Map Template",
+        "data": {
+          "eventid": "create_new.map_template"
         },
-        {
-          "displayName": "Folder",
-          "data": {
-            "eventid": "create_new.folder"
-          },
-          "icon": "folderAdd",
-          "permissions": ["create"]
+        "icon": "breakdownAdd",
+        "class": "menu-separator"
+      },
+      {
+        "displayName": "DITA Topic",
+        "data": {
+          "eventid": "create_new.topic"
         },
-        {
-          "displayName": "Markdown Topic",
-          "data": {
-            "eventid": "create_new.md"
-          },
-          "icon": "fileMarkdown", 
-          "permissions": ["create"]
-        }
-      ]
-    },
-    {
-      "displayName": "Upload Assets",
-      "data": {
-        "eventid": "uploadAssets"
+        "icon": "fileAdd",
+        "permissions": ["create"],
+        "roles": ["publishers", "authors"]
       },
-      "icon": "uploadToCloud",
-      "permissions": ["create"],
-      "roles": ["publishers", "authors"],
-      "class": "menu-separator"
-    },
-    {
-      "displayName": "Find Files in Folder",
-      "data": {
-        "eventid": "find_files_in_folder"
+      {
+        "displayName": "DITA Map",
+        "data": {
+          "eventid": "create_new.map"
+        },
+        "icon": "breakdownAdd",
+        "permissions": ["create"],
+        "class": "menu-separator",
+        "roles": ["publishers", "authors"]
       },
-      "icon": "search"
-    },
-    {
-      "displayName": "Refresh",
-      "data": {
-        "eventid": "refresh"
+      {
+        "displayName": "Folder",
+        "data": {
+          "eventid": "create_new.folder"
+        },
+        "icon": "folderAdd",
+        "permissions": ["create"]
       },
-      "icon": "refresh"
-    },
-    {
-      "displayName": "Collapse All",
-      "data": {
-        "eventid": "collapseAll"
-      },
-      "icon": "treeCollapseAll"
-    },
-    {
-      "displayName": "Add to Favorites",
-      "icon": "collectionAdd",
-      "data": {
-        "eventid": "addToCollection"
+      {
+        "displayName": "Markdown Topic",
+        "data": {
+          "eventid": "create_new.md"
+        },
+        "icon": "fileMarkdown", 
+        "permissions": ["create"]
       }
+    ]
+  },
+  {
+    "displayName": "Upload Assets",
+    "data": {
+      "eventid": "uploadAssets"
     },
-    {
-      "displayName": "Remove from Favorites",
-      "icon": "collectionExclude",
-      "data": {
-        "eventid": "removeFromCollection"
-      }
+    "icon": "uploadToCloud",
+    "permissions": ["create"],
+    "roles": ["publishers", "authors"],
+    "class": "menu-separator"
+  },
+  {
+    "displayName": "Find Files in Folder",
+    "data": {
+      "eventid": "find_files_in_folder"
     },
-    {
-      "displayName": "View in Assets UI",
-      "class": "menu-separator",
-      "icon": "alias",
-      "data": {
-        "eventid": "view_in_assets_ui"
-      }
+    "icon": "search"
+  },
+  {
+    "displayName": "Refresh",
+    "data": {
+      "eventid": "refresh"
+    },
+    "icon": "refresh"
+  },
+  {
+    "displayName": "Collapse All",
+    "data": {
+      "eventid": "collapseAll"
+    },
+    "icon": "treeCollapseAll"
+  },
+  {
+    "displayName": "Add to Favorites",
+    "icon": "collectionAdd",
+    "data": {
+      "eventid": "addToCollection"
     }
-  ]
-  
+  },
+  {
+    "displayName": "Remove from Favorites",
+    "icon": "collectionExclude",
+    "data": {
+      "eventid": "removeFromCollection"
+    }
+  },
+  {
+    "displayName": "View in Assets UI",
+    "class": "menu-separator",
+    "icon": "alias",
+    "data": {
+      "eventid": "view_in_assets_ui"
+    }
+  }
+]
