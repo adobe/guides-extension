@@ -24,7 +24,7 @@ export default {
       {
         component: 'button',
         icon: 'linkOut',
-        title: 'openTopicInAEM',
+        title: 'Open topic in Assets view',
         'on-click': 'openTopicInAEM',
         target: {
           key: 'value',
