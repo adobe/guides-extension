@@ -8,7 +8,7 @@ import folderProperties from './../imgs/crxde_folder_properties.png'
 
 # Installing and Using the AEM Guides Extension Package
 
-Extensions give you the opportunity to customise your AEM Guides app to better suit your needs. This extension framework is supported with AEM Guides v4.3 onwards.
+Extensions give you the opportunity to customise your AEM Guides app to better suit your needs. This extension framework is supported with AEM Guides v4.3 onwards (on-prem) and 2310 (cloud).
 
 # Requirements:
 This package requires [git bash](https://github.com/git-guides/install-git) and npm
