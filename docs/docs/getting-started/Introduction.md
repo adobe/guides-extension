@@ -7,4 +7,4 @@ The AEM Guides Extension package allows you to customise your app as per your re
 
 Head over to the [Installation guide](./integrating_customisations.md) to understand how to use this package
 
-> **_NOTE:_** This AEM Guides extension package is supported with AEM Guides version >= 4.3
+> **_NOTE:_** This AEM Guides extension package is supported with AEM Guides version >= 4.3 (on-prem) and >= 2310 (cloud)
