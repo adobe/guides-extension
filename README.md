@@ -2,7 +2,7 @@
 
 > This is a starting point for creating extension Adobe AEM Guides. Minimum required guides version is 4.3.
 
-The AEM Guides Extension package allows you to customise your app as per your requirements. Wish to add another button on a toolbar? A new input field in the comments box? Another option in the context menu? Now you can do it all.
+The AEM Guides Extension package allows you to customise the UI of your app as per your requirements. Wish to add another button on a toolbar? A new input field in the comments box? Another option in the context menu? Now you can do it all.
 
 ## Running the Documentation
 To run the documentation, in the `guides-extension/docs` directory, run the following commands:
