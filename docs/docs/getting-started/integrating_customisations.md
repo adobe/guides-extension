@@ -6,7 +6,7 @@ import folderStructure from './../imgs/crxde_folder_structure.png'
 import folderProperties from './../imgs/crxde_folder_properties.png'
 
 
-# Installing and Using the Guides Extension Package
+# Installing and Using the AEM Guides Extension Package
 
 Extensions give you the opportunity to customise your AEM Guides app to better suit your needs. This extension framework is supported with AEM Guides v4.3 onwards.
 

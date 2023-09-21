@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# Guides Extension Package Directory structure
+# AEM Guides Extension Package Directory structure
 
 ```
 ├── src
