@@ -59,3 +59,22 @@ Before customisation, the annotation toolbox looked like this:
 After the customisation, the annotation toolbox looks like this:
 
 ![customised-annotation-toolbox](imgs/customised_annotation_toolbox.png "Customised annotation toolbox")
+
+## Adding CSS
+
+For the consistency we provide the component already styled. The inserted JSON will have inherent styles applied to it
+The primary way to manage css is through the extraClass key in the extensions. 
+```js
+{    
+    "view":{
+        items:[
+            {
+                compoenent:"button",
+                extraClass:"underline bg-red",
+            }
+        ]
+    }
+}
+
+```
+You can put custom styles with CSS classes by adding a css file to [clientlibs](#clientlibs). During the build we also create [Tailwind](https://tailwindcss.com/docs/utility-first) output for the utility classes in tailwind. The config for the same can be found at [tailwind.config.js](./tailwind.config.js)
