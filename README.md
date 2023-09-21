@@ -7,7 +7,7 @@ The AEM Guides Extension package allows you to customise the UI of your app as p
 This repository contains the documentation to help you build and add these customisations to AEM Guides. Use the below steps to access the documentation:
 
 ## Running the Documentation
-1. Download node
+1. This repository needs [node](https://nodejs.org/en/download)
 
 2. To run the documentation, in the `guides-extension/docs` directory, run the following commands:
 ```bash
