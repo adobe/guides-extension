@@ -1,4 +1,4 @@
-import { VIEW_STATE } from "./review_app_examples/review_comment";
+import { VIEW_STATE } from "./review_app_examples/review_comment"
 import axios from "axios";
 const fileOptions = {
   id: "file_options",
@@ -99,7 +99,7 @@ const fileOptions = {
   },
 };
 
-export default fileOptions;
+export default fileOptions
 window.addEventListener("tcx-loaded", () => {
   tcx?.extension?.register(fileOptions.id, fileOptions);
 });
