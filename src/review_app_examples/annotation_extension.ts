@@ -1,4 +1,16 @@
 import { VIEW_STATE } from './review_comment'
+
+function openInGuidesEditor({src}){
+  const basePath = '/libs/fmdita/clientlibs/xmleditor/page.html?'
+  const pathString = `${basePath}src=${src}`
+  if(src){
+    window.open(pathString,'_blank')
+  }else{
+    window.open(basePath,'_blank')
+  }
+}
+
+
 export default {
     id: 'annotation_toolbox', 
     view: {
@@ -6,7 +18,7 @@ export default {
         {
           component: 'button',
           icon: 'linkOut',
-          title: 'openTopicInAEM',
+          title: 'Open Topic in Editor',
           'on-click': 'openTopicInAEM',
           target: {
             key: 'value',
@@ -21,7 +33,9 @@ export default {
       openTopicInAEM: function (args) {
           const topicIndex = tcx.model.getValue(tcx.model.KEYS.REVIEW_CURR_TOPIC)
           const {allTopics = {}} = tcx.model.getValue(tcx.model.KEYS.REVIEW_DATA) || {}
-          tcx.appGet('util').openInAEM(allTopics[topicIndex])
-      },
+		  openInGuidesEditor({src:allTopics[topicIndex]})
+               },
     },
   }
+  
+  
