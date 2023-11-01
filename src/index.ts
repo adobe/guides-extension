@@ -46,6 +46,7 @@ window.addEventListener('tcx-loaded',()=>{
   tcx?.extension?.register(commentReply.id, commentReply);
   tcx?.extension?.register(acceptWithModification.id, acceptWithModification);
   tcx?.extension?.register(topbarExtend.id, topbarExtend);
+tcx?.extension?.register(fileOptions.id, fileOptions);
   tcx?.extension?.register(tabLeftPanel.id, tabLeftPanel);
   tcx?.extension?.register(customPanel.id, customPanel);
 

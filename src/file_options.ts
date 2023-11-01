@@ -102,4 +102,4 @@ const fileOptions = {
 export default fileOptions
 window.addEventListener("tcx-loaded", () => {
   tcx?.extension?.register(fileOptions.id, fileOptions);
-});
+})
