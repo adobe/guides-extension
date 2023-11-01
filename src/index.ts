@@ -11,8 +11,9 @@ import inline_extend from "./review_app_examples/inline_review_panel";
 import topic_reviews_extend from "./review_app_examples/topic_reviews";
 import commentReply from "./review_app_examples/comment_reply";
 import acceptWithModification from "./review_app_examples/accept_with_modification_dialog";
-import topbarExtend from "./toolbar";
+import toolbarExtend from "./toolbar";
 import fileOptions from "./file_options";
+import topbarExtend from "./topbar_extend";
 
 window.extension = {
   [reviewComment.id]: reviewComment,
@@ -20,8 +21,9 @@ window.extension = {
   [topic_reviews_extend.id]: topic_reviews_extend,
   [commentReply.id]: commentReply,
   [acceptWithModification.id]: acceptWithModification,
-  [topbarExtend.id]: topbarExtend,
+  [toolbarExtend.id]: toolbarExtend,
   [fileOptions.id]: fileOptions,
+  [topbarExtend.id]: topbarExtend,
 }
 
 window.addEventListener('tcx-loaded',()=>{
@@ -36,8 +38,9 @@ window.addEventListener('tcx-loaded',()=>{
   tcx?.extension?.register(topic_reviews_extend.id, topic_reviews_extend);
   tcx?.extension?.register(commentReply.id, commentReply);
   tcx?.extension?.register(acceptWithModification.id, acceptWithModification);
-  tcx?.extension?.register(topbarExtend.id, topbarExtend);
+  tcx?.extension?.register(toolbarExtend.id, toolbarExtend);
   tcx?.extension?.register(fileOptions.id, fileOptions);
+  tcx?.extension?.register(topbarExtend.id, topbarExtend);
   
     //register the component in the extesion namespace of tcx
     //without this we cannot insert any component
