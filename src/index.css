@@ -157,6 +157,12 @@
       }
     }
   }
+  .new_options_button{
+    margin-right:8px !important;
+  }
+  .review-task-list {
+	padding-inline: var(--panel-toolbar-inline-space);
+  }
   /*
   .review-comment .comment-header .commentUniqId {
       @apply float-left text-[color:var(--color)] text-sm font-[bold] mr-[0.3rem];

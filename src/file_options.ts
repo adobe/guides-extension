@@ -47,6 +47,20 @@ const fileOptions = {
           viewState: VIEW_STATE.APPEND,
         },
       },
+	  {
+        displayName: "Set as rootmap",
+        data: {
+          eventid: "setAsRootmap",
+        },
+        icon: "key",
+		show: "@extraProps.onlyMap",
+        class: "menu-separator",
+        target: {
+          key: "displayName",
+          value: "Find in Map",
+          viewState: VIEW_STATE.APPEND,
+        },
+      },
     ],
   },
 
@@ -94,8 +108,21 @@ const fileOptions = {
           console.error("Fetch error:", t);
         });
     },
+	setAsRootmap() {
+		const path = this.model.selectedItem.path;
+		tcx.model.next(tcx.model.KEYS.PAGE_USER_DITA_MAP, path)
+	},
+	init() {
+		if(this.model.selectedItem.path.includes('ditamap')) {
+			this.model.extraProps.set("onlyMap", true);
+		} else {
+			this.model.extraProps.set("onlyMap", false);
+		}
+	}
   },
 };
+
+
 
 export default fileOptions
 window.addEventListener("tcx-loaded", () => {

@@ -53,7 +53,17 @@ const topbarExtend = {
                                 "variant": "action",
                                 "quiet": true,
                                 "title": "Insert Element",
+								"extraclass":"new_options_button",
                                 "on-click": "AUTHOR_SHOW_INSERT_ELEMENT_UI"
+                            },
+                            {
+                                "component": "button",
+                                "icon": "fileKey",
+                                "variant": "action",
+                                "quiet": true,
+                                "title": "Insert Prolog Keyword",
+								"extraclass":"new_options_button",
+                                "on-click": "INSERT_KEYWORD"
                             },
                             {
                                 "component": "button",
@@ -61,6 +71,7 @@ const topbarExtend = {
                                 "variant": "action",
                                 "quiet": true,
                                 "title": "Insert Paragraph",
+								"extraclass":"new_options_button",
                                 "on-click": "INSERT_P"
                             },
                             {
@@ -69,6 +80,7 @@ const topbarExtend = {
                                 "variant": "action",
                                 "quiet": true,
                                 "title": "Insert Numbered List",
+								"extraclass":"new_options_button",
                                 "on-click": "AUTHOR_INSERT_REMOVE_NUMBERED_LIST"
                             },
                             {
@@ -77,6 +89,7 @@ const topbarExtend = {
                                 "variant": "action",
                                 "quiet": true,
                                 "title": "Insert Bulleted List",
+								"extraclass":"new_options_button",
                                 "on-click": "AUTHOR_INSERT_REMOVE_BULLETED_LIST"
                             },
                             {
@@ -85,6 +98,7 @@ const topbarExtend = {
                                 "variant": "action",
                                 "quiet": true,
                                 "title": "Insert Table",
+								"extraclass":"new_options_button",
                                 "on-click": "AUTHOR_INSERT_ELEMENT",
                             }
                         ]
@@ -101,7 +115,18 @@ const topbarExtend = {
 
         INSERT_P(){
             this.next("AUTHOR_INSERT_ELEMENT",  "p" )
-        }
+        },
+		
+		INSERT_KEYWORD() {
+			var xmlString = '<prolog><metadata><keywords><keyword><?tcx-placeholder-text content="Add keyword here"?></keyword></keywords></metadata></prolog>';
+			if (tcx.curEditor.editor.rootElement.findOne('[data-tcx-tag="shortdesc"]')!==null) {
+				tcx.curEditor.editor.setElementSelection(tcx.curEditor.editor.rootElement.findOne('[data-tcx-tag="shortdesc"]'));
+				tcx.eventHandler.next(tcx.eventHandler.KEYS.AUTHOR_INSERT_XML, {args: xmlString});
+			} else if (tcx.curEditor.editor.rootElement.findOne('[data-tcx-tag="title"]')!==null) {
+				tcx.curEditor.editor.setElementSelection(tcx.curEditor.editor.rootElement.findOne('[data-tcx-tag="title"]'));
+				tcx.eventHandler.next(tcx.eventHandler.KEYS.AUTHOR_INSERT_XML, {args: xmlString});
+			}
+		}
     }
 }
 

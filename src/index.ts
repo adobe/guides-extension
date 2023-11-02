@@ -16,6 +16,8 @@ import toolbarExtend from "./toolbar";
 import fileOptions from "./file_options";
 import topbarExtend from "./topbar_extend";
 import topic_general from "./topic_general_properties";
+import notification_data_list from "./notification_left_panel";
+import custom_left_panel from "./customLeftPanel";
 import './index.css'
 
 window.extension = {
@@ -29,6 +31,8 @@ window.extension = {
   [fileOptions.id]: fileOptions,
   [topbarExtend.id]: topbarExtend,
   [topic_general.id]: topic_general,
+  [notification_data_list.id]: notification_data_list,
+  [custom_left_panel.id]: custom_left_panel,
 }
 
 window.addEventListener('tcx-loaded',()=>{
@@ -48,6 +52,8 @@ window.addEventListener('tcx-loaded',()=>{
   tcx?.extension?.register(fileOptions.id, fileOptions);
   tcx?.extension?.register(topbarExtend.id, topbarExtend);
   tcx?.extension?.register(topic_general.id, topic_general);
+  tcx?.extension?.register(notification_data_list.id, notification_data_list);
+  tcx?.extension?.register(custom_left_panel.id, custom_left_panel);
   
     //register the component in the extesion namespace of tcx
     //without this we cannot insert any component
