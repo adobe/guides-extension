@@ -14,6 +14,8 @@ import acceptWithModification from "./review_app_examples/accept_with_modificati
 import toolbarExtend from "./toolbar";
 import fileOptions from "./file_options";
 import topbarExtend from "./topbar_extend";
+import topic_general from "./topic_general_properties";
+import './index.css'
 
 window.extension = {
   [reviewComment.id]: reviewComment,
@@ -24,6 +26,7 @@ window.extension = {
   [toolbarExtend.id]: toolbarExtend,
   [fileOptions.id]: fileOptions,
   [topbarExtend.id]: topbarExtend,
+  [topic_general.id]: topic_general,
 }
 
 window.addEventListener('tcx-loaded',()=>{
@@ -41,6 +44,7 @@ window.addEventListener('tcx-loaded',()=>{
   tcx?.extension?.register(toolbarExtend.id, toolbarExtend);
   tcx?.extension?.register(fileOptions.id, fileOptions);
   tcx?.extension?.register(topbarExtend.id, topbarExtend);
+  tcx?.extension?.register(topic_general.id, topic_general);
   
     //register the component in the extesion namespace of tcx
     //without this we cannot insert any component
