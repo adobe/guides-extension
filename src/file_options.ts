@@ -81,7 +81,6 @@ const fileOptions = {
       const servletUrl = `/bin/invoke/workflow?path=${encodeURIComponent(
         path
       )}`;
-      // tcx.util.showSuccess("123");
 
       fetch(servletUrl)
         .then(function (t) {
@@ -90,7 +89,6 @@ const fileOptions = {
         })
         .then(function (t) {
           tcx.util.showSuccess("Asset Reprocess Successful");
-          //alert("Asset Reprocess Successful" + t);
         })
         .catch(function (t) {
           console.error("Fetch error:", t);
