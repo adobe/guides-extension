@@ -3,30 +3,30 @@ export const updatedProcessComments = function (data, topicIndex) {
   _.each(data, (event: any) => {
     const identify = _.findIndex(newCommentEvents, eventType => eventType === event.eventType)
     if (identify !== -1) {
-      this.next('setCommentId', {event, topicIndex})
+      this.next('setCommentId', { event, topicIndex })
     }
   })
 }
 
-const inline_extend =  {
+const inline_extend = {
   id: 'inline_review_panel',
   model: {
     deps: ['commentCount'],
   },
   controller: {
-    init: function () {
-      this.model.extraProps.set("commentCount", {})
+    init: function (context) {
+      context.setValue("commentCount", {})
       tcx.model.subscribeVal(tcx.model.KEYS.REVIEW_DATA, (reviewData) => {
         for (let topicId of reviewData.topicsinReview) {
           topicId = topicId.toString()
-          tcx.commentStore.onProcessEvent(topicId, (events) => updatedProcessComments.call(this, events, topicId))
+          tcx.commentStore.onProcessEvent(topicId, (events) => updatedProcessComments.call(context, events, topicId))
         }
       })
     },
 
-    onNewCommentEvent(args){
+    onNewCommentEvent(args) {
       const events = _.get(args, "events")
-      const currTopicIndex = tcx.model.getValue(tcx.model.KEYS.REVIEW_CURR_TOPIC) || this.model.currTopicIndex || "0"
+      const currTopicIndex = tcx.model.getValue(tcx.model.KEYS.REVIEW_CURR_TOPIC) || this.getValue('currTopicIndex') || "0"
       const event = _.get(_.get(events, currTopicIndex), '0')
       const newComment = _.get(args, 'newComment')
       const newReply = _.get(args, 'newReply')
@@ -47,30 +47,32 @@ const inline_extend =  {
         const name = `${extraProps.userFirstName} ${extraProps.userLastName}, ${extraProps.userJobTitle}`
         if (_.trim(name) === ',') {
           extraProps.userInfo = userData.displayName
-        }     
+        }
         else {
           extraProps.userInfo = name
         }
-        const data = {... event, extraProps}
-        this.sendExtraProps(
+        const data = { ...event, extraProps }
+        this.next(
+          'sendExtraProps',
           data
         )
       })
     },
 
     setCommentId({ event, topicIndex }) {
-      const modelComment = this.findComment(event.commentId)
+      const processingComments = this.getValue('processingComments')
+      const modelComment = _.find(processingComments, { commentId: event.commentId })
       const reqComment = tcx.commentStore.getComment(event.commentId)
-        const commentCount = this.model.extraProps.get('commentCount')
-        if (_.has(this.model.extraProps.get('commentCount'), topicIndex)) {
-          commentCount[topicIndex] += 1
-          this.model.extraProps.set("commentCount", commentCount)
-        }
-        else {
-          commentCount[topicIndex] = 1
-        }
-        if (reqComment) {
-        this.model.extraProps.set("commentCount", commentCount)
+      const commentCount = this.getValue('commentCount')
+      if (_.has(this.getValue('commentCount'), topicIndex)) {
+        commentCount[topicIndex] += 1
+        this.setValue("commentCount", commentCount)
+      }
+      else {
+        commentCount[topicIndex] = 1
+      }
+      if (reqComment) {
+        this.setValue("commentCount", commentCount)
         const commentUniqId = `${Number(topicIndex) + 1}.${commentCount[topicIndex]}`
         reqComment.extraProps.set("commentUniqId", commentUniqId)
         modelComment?.extraProps?.set("commentUniqId", commentUniqId)
@@ -78,6 +80,7 @@ const inline_extend =  {
     },
   },
 }
+
 export default inline_extend
 
 window.addEventListener('tcx-loaded',()=>{
