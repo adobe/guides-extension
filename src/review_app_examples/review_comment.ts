@@ -4,7 +4,7 @@ export enum VIEW_STATE {
   REPLACE = 'replace',
 }
 
-const reviewComment =  {
+const reviewComment = {
   id: 'review_comment',
   view: {
     items: [
@@ -44,40 +44,40 @@ const reviewComment =  {
         component: 'div',
         extraclass: 'comment-details',
         items:
-        [
-          {
-            component: 'div',
-            extraclass: 'comment-type-text',
-            items:
-            [
-              {
-                component: 'label',
-                label: 'Comment Type: ',
-                "extraclass": "severity-label",
-              },
-              {
-                component: 'label',
-                label: '@extraProps.severity'
-              }
-            ],
-          },
-          {
-            component: 'div',
-            extraclass: 'comment-rationale',
-            items:
-            [
-              {
-                component: 'label',
-                label: 'Comment Rationale: ',
-                extraclass: 'comment-rationale-label'
-              },
-              {
-                component: 'label',
-                label: '@extraProps.commentRationale'
-              }
-            ],
-          },
-        ],
+          [
+            {
+              component: 'div',
+              extraclass: 'comment-type-text',
+              items:
+                [
+                  {
+                    component: 'label',
+                    label: 'Comment Type: ',
+                    "extraclass": "severity-label",
+                  },
+                  {
+                    component: 'label',
+                    label: '@extraProps.severity'
+                  }
+                ],
+            },
+            {
+              component: 'div',
+              extraclass: 'comment-rationale',
+              items:
+                [
+                  {
+                    component: 'label',
+                    label: 'Comment Rationale: ',
+                    extraclass: 'comment-rationale-label'
+                  },
+                  {
+                    component: 'label',
+                    label: '@extraProps.commentRationale'
+                  }
+                ],
+            },
+          ],
         target: {
           key: 'id',
           value: 'attachment_tiles',
@@ -103,7 +103,7 @@ const reviewComment =  {
                 "placeholder": "",
                 'value': "@extraProps.severity",
                 "on-change": "changeSeverity",
-                "on-keyup": { "name": "changeSeverity", "eventArgs": { "keys": [ "ENTER" ]} },
+                "on-keyup": { "name": "changeSeverity", "eventArgs": { "keys": ["ENTER"] } },
               },
             ],
           },
@@ -151,58 +151,60 @@ const reviewComment =  {
           key: 'title',
           value: 'Reject comment',
           viewState: VIEW_STATE.APPEND,
-        },       
+        },
       }
     ],
   },
 
   controller: {
-    init: function () {
-      const reqComment = tcx.commentStore.getComment(this.model.commentId)
-      this.model.extraProps = reqComment.extraProps
-      this.model.extraProps.set("labels", ['None', 'CRITICAL', 'MAJOR', 'SUBSTANTATIVE', 'ADMINISTRATIVE'])
+    init: function (context) {
+      const reqComment = tcx.commentStore.getComment(context.getValue('commentId'))
+      context.setValue('extraProps', reqComment.extraProps)
+      context.setValue("labels", ['None', 'CRITICAL', 'MAJOR', 'SUBSTANTATIVE', 'ADMINISTRATIVE'])
     },
 
-    sendAcceptWithModificationProps(args){
-      this.updateExtraProps(args)
+    sendAcceptWithModificationProps(args) {
+      this.next('updateExtraProps', args)
     },
-    changeSeverity: function(args) {
-      this.model.extraProps.set("severity", args.data)
-      this.updateExtraProps(
-        {'severity': this.model.extraProps.get("severity")}
+
+    changeSeverity: function (args) {
+      this.setValue("severity", args.data)
+      this.next('updateExtraProps',
+        { 'severity': this.getValue("severity") }
       )
     },
 
-    changeCommentRationale: function() {
-      this.updateExtraProps(
-        {'commentRationale': this.model.extraProps.get("commentRationale")}
+    changeCommentRationale: function () {
+      this.next('updateExtraProps',
+        { 'commentRationale': this.getValue("commentRationale") }
       )
     },
 
-      submitEditComment({domEvent}:{domEvent?:KeyboardEvent}={}) {
-        if(domEvent?.key === 'Enter'){
-          this.model.commentRationale = _.trim(this.model.commentRationale)
-        }
-        if (this.model.extraProps.get("originalCommentRationale") !== this.model.extraProps.get("commentRationale")) {
-          this.model.extraProps.set("originalCommentRationale", this.model.extraProps.get("commentRationale"))
-          this.next('changeCommentRationale')
+    submitEditComment({ domEvent }: { domEvent?: KeyboardEvent } = {}) {
+      if (domEvent?.key === 'Enter') {
+        this.setValue('commentRationale', _.trim(this.getValue('commentRationale')))
+      }
+      if (this.getValue("originalCommentRationale") !== this.getValue("commentRationale")) {
+        this.setValue("originalCommentRationale", this.getValue("commentRationale"))
+        this.next('changeCommentRationale')
       }
     },
 
-    openMailTo(){
-      const mailToLink = `mailto:${this.model.extraProps.get("userEmail")}`
+    openMailTo() {
+      const mailToLink = `mailto:${this.getValue("userEmail")}`
       tcx.util.openLink(mailToLink)
     },
 
-    acceptWithModification(){
-      tcx.eventHandler.next(tcx.eventHandler.KEYS.APP_SHOW_DIALOG, 
-        { 
+    acceptWithModification() {
+      tcx.eventHandler.next(tcx.eventHandler.KEYS.APP_SHOW_DIALOG,
+        {
           id: 'accept_with_modification_dialog',
-          eventHandler: this.eventHandler 
-        })    
-      }
+          eventHandler: this.eventHandler,
+        })
+    }
   }
 }
+
 export default reviewComment
 window.addEventListener('tcx-loaded',()=>{
   tcx?.extension?.register(reviewComment.id, reviewComment);

@@ -1,6 +1,6 @@
 import { VIEW_STATE } from "./review_comment"
 
-const commentReply =  {
+const commentReply = {
   id: 'comment_reply',
   view: {
     items: [
@@ -22,10 +22,10 @@ const commentReply =  {
         ],
 
         target: {
-            key: 'extraclass',
-            value: 'user-name',
-            viewState: VIEW_STATE.REPLACE,
-          },
+          key: 'extraclass',
+          value: 'user-name',
+          viewState: VIEW_STATE.REPLACE,
+        },
       },
     ],
   },
@@ -33,20 +33,20 @@ const commentReply =  {
     deps: [],
   },
   controller: {
-    init: function () {
-      const reqComment = tcx.commentStore.getComment(this.model.commentId)
-      const reqReply = reqComment.findReply(this.model.replyId)
-      this.model.extraProps = reqReply.extraProps
+    init: function (context) {
+      const reqComment = tcx.commentStore.getComment(context.getValue('commentId'))
+      const reqReply = reqComment.findReply(context.getValue('replyId'))
+      context.setValue('extraProps', reqReply.extraProps)
     },
 
     openMailTo(){
-      const mailToLink = `mailto:${this.model.extraProps?.get("userEmail")}`
+      const mailToLink = `mailto:${this.getValue("userEmail")}`
       tcx.util.openLink(mailToLink)
     }
   }
 }
 export default commentReply
 
-window.addEventListener('tcx-loaded',()=>{
+window.addEventListener('tcx-loaded', () => {
   tcx?.extension?.register(commentReply.id, commentReply);
 })
