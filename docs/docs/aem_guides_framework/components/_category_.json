@@ -1,8 +1,0 @@
-{
-  "label": "Components",
-  "position": 1,
-  "link": {
-    "type": "generated-index",
-    "description": "Some examples of available components in Adobe guides extension framework. A detailed description can be found [here](https://opensource.adobe.com/spectrum-web-components/)"
-  }
-}
