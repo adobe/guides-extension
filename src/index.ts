@@ -17,19 +17,16 @@ import fileOptions from "./file_options";
 import left_panel_container from './left_panel_container';
 import annotation_extension from './review_app_examples/annotation_extension';
 import rightPanel from './right_panel_container';
-const url = new URLSearchParams(window.location.search)
 
-if (url.has("extension")) {
-  window.extension = {
-    [reviewComment.id]: reviewComment,
-    [inline_extend.id]: inline_extend,
-    [topic_reviews_extend.id]: topic_reviews_extend,
-    [commentReply.id]: commentReply,
-    [acceptWithModification.id]: acceptWithModification,
-    [topbarExtend.id]: topbarExtend,
-    [fileOptions.id]: fileOptions,
-    [left_panel_container.id]: left_panel_container,
-    [rightPanel.id]: rightPanel,
-    [annotation_extension.id]: annotation_extension
-  }
+window.extension = {
+  [reviewComment.id]: reviewComment,
+  [inline_extend.id]: inline_extend,
+  [topic_reviews_extend.id]: topic_reviews_extend,
+  [commentReply.id]: commentReply,
+  [acceptWithModification.id]: acceptWithModification,
+  [topbarExtend.id]: topbarExtend,
+  [fileOptions.id]: fileOptions,
+  [left_panel_container.id]: left_panel_container,
+  [rightPanel.id]: rightPanel,
+  [annotation_extension.id]: annotation_extension
 }
