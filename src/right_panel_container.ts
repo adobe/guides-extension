@@ -19,7 +19,7 @@ const rightPanel = {
                 "items": [
                     {
                         "component": "label",
-                        "id": "New Tab Label",
+                        "label": "New Tab Label",
                     }
                 ],
             },
@@ -27,6 +27,3 @@ const rightPanel = {
     }
 }
 export default rightPanel
-window.addEventListener('tcx-loaded', () => {
-    tcx?.extension?.register(rightPanel.id, rightPanel);
-})

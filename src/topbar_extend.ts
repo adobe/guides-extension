@@ -27,6 +27,3 @@ const topbarExtend = {
 }
 
 export default topbarExtend
-window.addEventListener('tcx-loaded', () => {
-    tcx?.extension?.register(topbarExtend.id, topbarExtend);
-})

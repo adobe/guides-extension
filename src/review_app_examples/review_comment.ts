@@ -157,10 +157,10 @@ const reviewComment = {
   },
 
   controller: {
-    init: function (context) {
-      const reqComment = tcx.commentStore.getComment(context.getValue('commentId'))
-      context.setValue('extraProps', reqComment.extraProps)
-      context.setValue("labels", ['None', 'CRITICAL', 'MAJOR', 'SUBSTANTATIVE', 'ADMINISTRATIVE'])
+    init: function () {
+      const reqComment = tcx.commentStore.getComment(this.getValue('commentId'))
+      this.setValue('extraProps', reqComment.extraProps)
+      this.setValue("labels", ['None', 'CRITICAL', 'MAJOR', 'SUBSTANTATIVE', 'ADMINISTRATIVE'])
     },
 
     sendAcceptWithModificationProps(args) {
@@ -199,13 +199,12 @@ const reviewComment = {
       tcx.eventHandler.next(tcx.eventHandler.KEYS.APP_SHOW_DIALOG,
         {
           id: 'accept_with_modification_dialog',
-          eventHandler: this.eventHandler,
+          args: {
+            onSuccess: (extraProps) => this.next('sendAcceptWithModificationProps', extraProps),
+          }
         })
     }
   }
 }
 
 export default reviewComment
-window.addEventListener('tcx-loaded',()=>{
-  tcx?.extension?.register(reviewComment.id, reviewComment);
-})

@@ -8,18 +8,30 @@ export const updatedProcessComments = function (data, topicIndex) {
   })
 }
 
+const getUserInfo = (userId) => {
+  return $.ajax({
+    url: '/bin/dxml/xmleditor/userinfo',
+    data: {
+      username: userId,
+    },
+    success: (data) => {
+      return data
+    }
+  })
+}
+
 const inline_extend = {
   id: 'inline_review_panel',
   model: {
     deps: ['commentCount'],
   },
   controller: {
-    init: function (context) {
-      context.setValue("commentCount", {})
+    init: function () {
+      this.setValue("commentCount", {})
       tcx.model.subscribeVal(tcx.model.KEYS.REVIEW_DATA, (reviewData) => {
         for (let topicId of reviewData.topicsinReview) {
           topicId = topicId.toString()
-          tcx.commentStore.onProcessEvent(topicId, (events) => updatedProcessComments.call(context, events, topicId))
+          tcx.commentStore.onProcessEvent(topicId, (events) => updatedProcessComments.call(this, events, topicId))
         }
       })
     },
@@ -36,7 +48,7 @@ const inline_extend = {
     },
 
     setUserInfo(event) {
-      this.loader?.getUserInfo(event.user).subscribe(userData => {
+      getUserInfo(event.user).subscribe(userData => {
         const extraProps = {
           "userFirstName": userData?.givenName || '',
           "userLastName": userData?.familyName || '',
@@ -82,7 +94,3 @@ const inline_extend = {
 }
 
 export default inline_extend
-
-window.addEventListener('tcx-loaded',()=>{
-  tcx?.extension?.register(inline_extend.id, inline_extend);
-})

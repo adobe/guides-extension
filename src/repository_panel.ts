@@ -24,7 +24,7 @@ export default {
       {
         target: {
           key:"id",
-          valu:'respository-'
+          value:'respository-'
 ,          },
         component: 'widget',
         id: 'loading_shimmer',

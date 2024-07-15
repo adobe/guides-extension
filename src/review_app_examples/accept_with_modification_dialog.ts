@@ -82,22 +82,18 @@ const acceptWithModification = {
   },
 
    submitAcceptWithModification: function () {
-     const extraProps = {
-       'revisedText': this.model.extraProps.get("revisedText"),
-       'adjudicationRationale': this.model.extraProps.get("adjudicationRationale"),
-     }
-     this.parentEventHandler.next('sendAcceptWithModificationProps', extraProps)
-     this.next('handleClose')
+    const extraProps = {
+      'revisedText': this.getValue("revisedText"),
+      'adjudicationRationale': this.getValue("adjudicationRationale"),
+    }
+    this.args.onSuccess(extraProps)
+    this.next('handleClose')
    },
 
    handleClose() {
     tcx.eventHandler.next(tcx.eventHandler.KEYS.APP_HIDE_DIALOG, { id: 'accept_with_modification_dialog' })
-
    }
   }
 }
 
 export default acceptWithModification
-window.addEventListener('tcx-loaded', () => {
-  tcx?.extension?.register(acceptWithModification.id, acceptWithModification);
-})

@@ -1,5 +1,18 @@
 import { VIEW_STATE } from "./review_app_examples/review_comment"
 
+const loadDitaFile = (filePath, uuid) =>{
+  return $.ajax({
+    type: 'POST',
+    url: '/bin/referencelistener',
+    data: {
+        operation: 'getdita',
+        path: filePath,
+        type: uuid ? 'UUID' : 'PATH',
+        cache: false,
+    },
+  })
+}
+
 const fileOptions = {
   id: "file_options",
   contextMenuWidget: "repository_panel",
@@ -36,8 +49,31 @@ const fileOptions = {
 
   controller: {
     downloadFile() {
+      console.log('args: ', this.args)
+      console.log('view confgi: ', this.viewConfig)
+      console.log('subject: ', this.subject)
+      this.subscribe({
+        key: 'rename',
+        next: () => { console.log('extenson sub rename') }
+      })
+      this.subscribeAppEvent({
+        key: 'app.active_document_changed',
+        next: () => { console.log('active doc changed subs') }
+      })
+      this.subscribeAppModel('download + console',
+        () => { console.log('app mode subs') }
+      )
+      this.subscribeParentEvent({
+        key: 'tabChange',
+        next: () => { console.log('tab change subs') }
+      })
+      this.parentEventHandlerNext('tabChange', {
+        data: 'repository_panel'
+      })
+      this.appModelNext('app.mode', 'author')
+      this.appEventHandlerNext('app.active_document_changed', 'active doc changed')
       const path = this.getValue('selectedItems')[0].path
-      this.loader.loadDitaFile(path).then((file) => {
+      loadDitaFile(path, true).then((file) => {
         function download_file(name, contents) {
           const mime_type = "text/plain";
 
@@ -65,6 +101,3 @@ const fileOptions = {
 }
 
 export default fileOptions
-window.addEventListener('tcx-loaded', () => {
-  tcx?.extension?.register(fileOptions.id, fileOptions);
-})
