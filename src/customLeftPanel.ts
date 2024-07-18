@@ -88,6 +88,3 @@ const customPanel: Extention = {
   },
 }
 export default customPanel//optional export 
-window.addEventListener('tcx-loaded', () => {
-  tcx?.extension?.register(customPanel.id, customPanel)//requred to extension component register with id
-})

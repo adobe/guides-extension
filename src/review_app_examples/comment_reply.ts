@@ -33,10 +33,10 @@ const commentReply = {
     deps: [],
   },
   controller: {
-    init: function (context) {
-      const reqComment = tcx.commentStore.getComment(context.getValue('commentId'))
-      const reqReply = reqComment.findReply(context.getValue('replyId'))
-      context.setValue('extraProps', reqReply.extraProps)
+    init: function () {
+      const reqComment = tcx.commentStore.getComment(this.getValue('commentId'))
+      const reqReply = reqComment.findReply(this.getValue('replyId'))
+      this.setValue('extraProps', reqReply.extraProps)
     },
 
     openMailTo(){
@@ -46,7 +46,3 @@ const commentReply = {
   }
 }
 export default commentReply
-
-window.addEventListener('tcx-loaded', () => {
-  tcx?.extension?.register(commentReply.id, commentReply);
-})

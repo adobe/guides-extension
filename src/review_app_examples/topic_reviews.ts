@@ -9,12 +9,12 @@ const topic_reviews_extend = {
   },
   controller: {
     ...inline_extend.controller,
-    init: function (context) {
-      context.setValue("commentCount", {})
+    init: function () {
+      this.setValue("commentCount", {})
       tcx.model.subscribeVal(tcx.model.KEYS.REVIEW_DATA, (reviewData) => {
         for (let topicId of reviewData.topicsinReview) {
           topicId = topicId.toString()
-          tcx.commentStore.onProcessEvent(topicId, (events) => updatedProcessComments.call(context, events, topicId))
+          tcx.commentStore.onProcessEvent(topicId, (events) => updatedProcessComments.call(this, events, topicId))
         }
       })
     },
@@ -23,7 +23,3 @@ const topic_reviews_extend = {
 }
 
 export default topic_reviews_extend
-
-window.addEventListener('tcx-loaded',()=>{
-  tcx?.extension?.register(topic_reviews_extend.id, topic_reviews_extend);
-})

@@ -98,7 +98,6 @@ const topbarExtend = {
         ]
     },
     controller: {
-
         INSERT_P(){
             this.next("AUTHOR_INSERT_ELEMENT",  "p" )
         }
@@ -106,6 +105,3 @@ const topbarExtend = {
 }
 
 export default topbarExtend
-window.addEventListener('tcx-loaded', () => {
-    tcx?.extension?.register(topbarExtend.id, topbarExtend);
-})

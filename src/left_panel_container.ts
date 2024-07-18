@@ -11,6 +11,7 @@ const tabLeftPanel = {
                 "on-click": "tabClick",
                 "icon": "collection",
                 "title": "TEST EXTENSION",
+                "label": "TEST EXTENSION",
                 "prevTabID": "condition_panel"
             },
         ],
@@ -22,15 +23,12 @@ const tabLeftPanel = {
                 "showClass": "@visibleTabs.citation_panel",
                 "items": [
                     {
-                        "component": "label",
-                        "id": "Test Tab Panel",
+                        "id": "annotation_toolbox"
                     }
                 ],
             },
         ]
     }
 }
+
 export default tabLeftPanel
-window.addEventListener('tcx-loaded', () => {
-    tcx?.extension?.register(tabLeftPanel.id, tabLeftPanel);
-})
