@@ -17,6 +17,7 @@ import fileOptions from "./file_options";
 import left_panel_container from './left_panel_container';
 import annotation_extension from './review_app_examples/annotation_extension';
 import rightPanel from './right_panel_container';
+import saveRevision from "./save_revision";
 
 window.extension = {
   [reviewComment.id]: reviewComment,
@@ -28,5 +29,6 @@ window.extension = {
   [fileOptions.id]: fileOptions,
   [left_panel_container.id]: left_panel_container,
   [rightPanel.id]: rightPanel,
-  [annotation_extension.id]: annotation_extension
+  [annotation_extension.id]: annotation_extension,
+  [saveRevision.id]: saveRevision
 }
