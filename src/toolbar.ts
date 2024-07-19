@@ -98,6 +98,15 @@ const topbarExtend = {
         ]
     },
     controller: {
+        init() {
+            console.log(this.proxy.getValue('canUndo'))
+            this.proxy.subscribeAppEvent({
+                key: "editor.preview_rendered",
+                next: async function (e) {
+                    console.log(this.proxy.getValue('canUndo'))
+                }.bind(this)
+            })
+        },
         INSERT_P(){
             this.next("AUTHOR_INSERT_ELEMENT",  "p" )
         }
