@@ -48,7 +48,7 @@ const inline_extend = {
     },
 
     setUserInfo(event) {
-      getUserInfo(event.user).subscribe(userData => {
+      getUserInfo(event.user).done(userData => {
         const extraProps = {
           "userFirstName": userData?.givenName || '',
           "userLastName": userData?.familyName || '',
