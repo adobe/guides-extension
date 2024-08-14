@@ -18,6 +18,7 @@ import left_panel_container from './left_panel_container';
 import annotation_extension from './review_app_examples/annotation_extension';
 import rightPanel from './right_panel_container';
 import saveRevision from "./save_revision";
+import other_attribute_list_item from "./editor/other_attribute_list_item";
 
 window.extension = {
   [reviewComment.id]: reviewComment,
@@ -31,4 +32,5 @@ window.extension = {
   [rightPanel.id]: rightPanel,
   [annotation_extension.id]: annotation_extension,
   [saveRevision.id]: saveRevision
+  [other_attribute_list_item.id]: other_attribute_list_item
 }
