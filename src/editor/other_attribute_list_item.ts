@@ -24,12 +24,12 @@ export default {
     ],
   },
   controller: {
-    handleClick: function(args,args2){
+    handleClick: function(){
         const name = this.getValue('name')
         const value = this.getValue('value')
         const xpath = this.getValue('xpath')
     },
-    init: function(args, args2){
+    init: function(){
       const name = this.getValue('name')
       const value = this.getValue('value')
     },
