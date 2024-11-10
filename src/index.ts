@@ -31,6 +31,6 @@ window.extension = {
   [left_panel_container.id]: left_panel_container,
   [rightPanel.id]: rightPanel,
   [annotation_extension.id]: annotation_extension,
-  [saveRevision.id]: saveRevision
+  [saveRevision.id]: saveRevision,
   [other_attribute_list_item.id]: other_attribute_list_item
 }
