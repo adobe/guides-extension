@@ -21,7 +21,7 @@ const mapTranslation = {
 
           // tcx.appModel.disableTranslationButton = true;
 		  
-          // uncomment the above line to disable the 'send to translation' button if document state is set to draft
+          // uncomment the above line to disable the 'send to translation' button if document state is set to draft.
         }
       });
     },
