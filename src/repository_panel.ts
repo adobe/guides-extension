@@ -46,6 +46,31 @@ export default {
     ],
   },
   controller: {
+    init: function() {
+      console.log('subject: ', this.subject)      
+      this.subscribe({
+        key: 'rename',
+        next: () => { console.log('rename using extension') }
+      })
+      console.log('Logging view config ', this.viewConfig)
+      this.next(this.viewConfig.items[1].searchModeChangedEvent, { searchMode: true })
+      this.subscribeAppEvent({
+        key: 'app.active_document_changed',
+        next: () => { console.log('active doc changed subs') }
+      })
+      this.subscribeAppModel('app.mode',
+        () => { console.log('app mode subs') }
+      )
+      this.subscribeParentEvent({
+        key: 'tabChange',
+        next: () => { console.log('tab change subs') }
+      })
+      this.parentEventHandlerNext('tabChange', {
+        data: 'map_panel'
+      })
+      this.appModelNext('app.mode', 'author')
+      this.appEventHandlerNext('app.active_document_changed', 'active doc changed')
+    },
     cancel: function (args) {
       this.setValue('testLabel', 'testlabel2')
     },
