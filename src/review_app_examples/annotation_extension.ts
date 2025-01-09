@@ -6,7 +6,7 @@ export function getVersionNumber(tab:TabItem) {
   if(version && versionDirty) {
     version = `${version} * `
   }
-  return version || intl.message('none')
+  return version || 'none'
 }
 
 export function isSideBySideViewOn(tab:TabItem) {
