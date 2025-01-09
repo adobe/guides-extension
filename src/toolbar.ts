@@ -99,11 +99,11 @@ const topbarExtend = {
     },
     controller: {
         init() {
-            console.log(this.proxy.getValue('canUndo'))
-            this.proxy.subscribeAppEvent({
+            console.log(this.getValue('canUndo'))
+            this.subscribeAppEvent({
                 key: "editor.preview_rendered",
                 next: async function (e) {
-                    console.log(this.proxy.getValue('canUndo'))
+                    console.log(this.getValue('canUndo'))
                 }.bind(this)
             })
         },
