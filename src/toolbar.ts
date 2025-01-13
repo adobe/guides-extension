@@ -1,3 +1,5 @@
+// Refer to this example for making changes to the toolbar for version 4.6 and before.
+
 import { VIEW_STATE } from "./review_app_examples/review_comment"
 
 const topbarExtend = {
@@ -99,11 +101,11 @@ const topbarExtend = {
     },
     controller: {
         init() {
-            console.log(this.getValue('canUndo'))
-            this.subscribeAppEvent({
+            console.log(this.proxy.getValue('canUndo'))
+            this.proxy.subscribeAppEvent({
                 key: "editor.preview_rendered",
                 next: async function (e) {
-                    console.log(this.getValue('canUndo'))
+                    console.log(this.proxy.getValue('canUndo'))
                 }.bind(this)
             })
         },
