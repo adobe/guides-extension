@@ -20,6 +20,7 @@ import rightPanel from "./right_panel_container";
 import saveRevision from "./save_revision";
 import other_attribute_list_item from "./editor/other_attribute_list_item";
 import mapTranslation from "./map_translation_view";
+import editorToolbarExtend from "./editor_toolbar";
 
 window.extension = {
   [reviewComment.id]: reviewComment,
@@ -35,4 +36,5 @@ window.extension = {
   [saveRevision.id]: saveRevision,
   [other_attribute_list_item.id]: other_attribute_list_item,
   [mapTranslation.id]: mapTranslation,
+  [editorToolbarExtend.id]: editorToolbarExtend
 };
