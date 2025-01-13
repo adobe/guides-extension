@@ -1,6 +1,6 @@
 import { VIEW_STATE } from "./review_app_examples/review_comment"
 
-const toolbarExtend = {
+const editorToolbarExtend = {
     id: "editor_toolbar",
     view: {
         items: [
@@ -61,3 +61,5 @@ const toolbarExtend = {
     }
     }
 }
+
+export default editorToolbarExtend;
