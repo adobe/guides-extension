@@ -53,7 +53,7 @@ const editorToolbarExtend = {
       this.appEventHandlerNext("AUTHOR_INSERT_ELEMENT", "p")
     },
     openExternalLinkDialog() {
-      tcx.eventHandler.next("AUTHOR_INSERT_ELEMENT",
+      this.appEventHandlerNext("AUTHOR_INSERT_ELEMENT",
         {
           args: "<xref href='' scope='external' format = 'dita' ></xref>", activeTabId: "conkey_reference"
         }
