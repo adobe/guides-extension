@@ -23,20 +23,24 @@ import mapTranslation from "./map_translation_view";
 import editorToolbarExtend from "./editor_toolbar";
 import html5PresetGeneral from './html5_preset_general'
 
-window.extension = {
-  [reviewComment.id]: reviewComment,
-  [inline_extend.id]: inline_extend,
-  [topic_reviews_extend.id]: topic_reviews_extend,
-  [commentReply.id]: commentReply,
-  [acceptWithModification.id]: acceptWithModification,
-  [topbarExtend.id]: topbarExtend,
-  [fileOptions.id]: fileOptions,
-  [left_panel_container.id]: left_panel_container,
-  [rightPanel.id]: rightPanel,
-  [annotation_extension.id]: annotation_extension,
-  [saveRevision.id]: saveRevision,
-  [other_attribute_list_item.id]: other_attribute_list_item,
-  [mapTranslation.id]: mapTranslation,
-  [editorToolbarExtend.id]: editorToolbarExtend,
-  [html5PresetGeneral.id]: html5PresetGeneral
-};
+const url = new URLSearchParams(window.location.search)
+
+if (url.has("extension")) {
+  window.extension = {
+    [reviewComment.id]: reviewComment,
+    [inline_extend.id]: inline_extend,
+    [topic_reviews_extend.id]: topic_reviews_extend,
+    [commentReply.id]: commentReply,
+    [acceptWithModification.id]: acceptWithModification,
+    [topbarExtend.id]: topbarExtend,
+    [fileOptions.id]: fileOptions,
+    [left_panel_container.id]: left_panel_container,
+    [rightPanel.id]: rightPanel,
+    [annotation_extension.id]: annotation_extension,
+    [saveRevision.id]: saveRevision,
+    [other_attribute_list_item.id]: other_attribute_list_item,
+    [mapTranslation.id]: mapTranslation,
+    [editorToolbarExtend.id]: editorToolbarExtend,
+    [html5PresetGeneral.id]: html5PresetGeneral
+  };
+}
