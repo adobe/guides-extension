@@ -7,34 +7,6 @@ const topbarExtend = {
     view: {
         items: [
             {
-                component: "div",
-                target: {
-                    key:"title",value: "Insert Element",                    
-                    viewState: VIEW_STATE.REPLACE
-                }
-            },
-            {
-                component: "div",
-                target: {
-                    key:"title",value: "Insert Paragraph",                    
-                    viewState: VIEW_STATE.REPLACE
-                }
-            },
-            {
-                component: "div",
-                target: {
-                    key:"title",value: "Insert Numbered List",                    
-                    viewState: VIEW_STATE.REPLACE
-                }
-            },
-            {
-                component: "div",
-                target: {
-                    key:"title",value: "Insert Bulleted List",                    
-                    viewState: VIEW_STATE.REPLACE
-                }
-            },
-            {
                 "component": "button",
                 "extraclass": "insert-multimedia",
                 "icon": "more",
