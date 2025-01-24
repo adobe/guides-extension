@@ -45,8 +45,8 @@ const topbarExtend = {
                     "args": ["simpletable", "table", "choicetable"]
                 },
                 target: {
-                    key:"title",value: "Insert Table",                    
-                    viewState: VIEW_STATE.REPLACE
+                    key:"title",value: "Insert Image",                    
+                    viewState: VIEW_STATE.PREPEND
                 }
             },
             {
