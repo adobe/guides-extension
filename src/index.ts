@@ -32,7 +32,7 @@ if (url.has("extension")) {
     [topic_reviews_extend.id]: topic_reviews_extend,
     [commentReply.id]: commentReply,
     [acceptWithModification.id]: acceptWithModification,
-    [topbarExtend.id]: topbarExtend,
+    // [topbarExtend.id]: topbarExtend,
     [fileOptions.id]: fileOptions,
     [left_panel_container.id]: left_panel_container,
     [rightPanel.id]: rightPanel,

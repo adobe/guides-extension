@@ -7,13 +7,6 @@ const editorToolbarExtend = {
   view: {
     items: [
       {
-        component: "div",
-        target: {
-          key: "title", value: "Insert Numbered List",
-          viewState: VIEW_STATE.REPLACE
-        }
-      },
-      {
         "component": "button",
         "icon": "textParagraph",
         "variant": "action",
@@ -40,15 +33,6 @@ const editorToolbarExtend = {
     ]
   },
   controller: {
-    init: function () {
-      console.log(this.getValue("canUndo"))
-      this.subscribeAppEvent({
-        key: "editor.preview_rendered",
-        next: async function (e) {
-          console.log(this.getValue("canUndo"))
-        }.bind(this)
-      })
-    },
     INSERT_P() {
       this.appEventHandlerNext("AUTHOR_INSERT_ELEMENT", "p")
     },
