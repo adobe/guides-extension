@@ -7,30 +7,17 @@ const topbarExtend = {
     view: {
         items: [
             {
-                component: "div",
+                "component": "button",
+                "icon": "table",
+                "variant": "action",
+                "quiet": true,
+                "title": "Insert Table",
+                "on-click": {
+                    "name":  "AUTHOR_INSERT_ELEMENT",
+                    "args": ["simpletable", "table", "choicetable"]
+                },
                 target: {
-                    key:"title",value: "Insert Element",                    
-                    viewState: VIEW_STATE.REPLACE
-                }
-            },
-            {
-                component: "div",
-                target: {
-                    key:"title",value: "Insert Paragraph",                    
-                    viewState: VIEW_STATE.REPLACE
-                }
-            },
-            {
-                component: "div",
-                target: {
-                    key:"title",value: "Insert Numbered List",                    
-                    viewState: VIEW_STATE.REPLACE
-                }
-            },
-            {
-                component: "div",
-                target: {
-                    key:"title",value: "Insert Bulleted List",                    
+                    key:"title",value: "Insert Table",                    
                     viewState: VIEW_STATE.REPLACE
                 }
             },
@@ -80,14 +67,6 @@ const topbarExtend = {
                                 "quiet": true,
                                 "title": "Insert Bulleted List",
                                 "on-click": "AUTHOR_INSERT_REMOVE_BULLETED_LIST"
-                            },
-                            {
-                                "component": "button",
-                                "icon": "table",
-                                "variant": "action",
-                                "quiet": true,
-                                "title": "Insert Table",
-                                "on-click": "AUTHOR_INSERT_ELEMENT",
                             }
                         ]
                     },
