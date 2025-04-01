@@ -6,7 +6,7 @@ const authorOutlineElementMenu = {
     view: {
       items: [
         {
-          displayName: "custom Wrap Element",
+          displayName: "Custom wrap element",
           data: {
             eventid: "customWrapClicked",
           },
@@ -18,22 +18,6 @@ const authorOutlineElementMenu = {
             viewState: VIEW_STATE.APPEND,
           },
         },
-      ],
-    },
-    controller: {
-      customWrapClicked() {
-        console.log('Custom row clicked')
-      }, 
-    },
-};
-
-export default authorOutlineElementMenu;
-
-export const authorOutlineElementMenu2 = {
-   id: "author_outline_element",
-   contextMenuWidget: "dita_editor_menu",
-    view: {
-      items: [
         {
          displayName: "Custom Cut",
          data: {
@@ -48,4 +32,10 @@ export const authorOutlineElementMenu2 = {
         },
       ],
     },
+    controller: {
+      customWrapClicked() {
+       console.log('Custom context menu clicked');
+      }, 
+    },
 };
+export default authorOutlineElementMenu;
