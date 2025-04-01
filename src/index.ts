@@ -21,7 +21,9 @@ import saveRevision from "./save_revision";
 import other_attribute_list_item from "./editor/other_attribute_list_item";
 import mapTranslation from "./map_translation_view";
 import editorToolbarExtend from "./editor_toolbar";
-import html5PresetGeneral from './html5_preset_general'
+import html5PresetGeneral from './html5_preset_general';
+import authorOutlineElementMenu from "./editor_breadcrumb";
+
 
 window.extension = {
   [reviewComment.id]: reviewComment,
@@ -38,5 +40,6 @@ window.extension = {
   [other_attribute_list_item.id]: other_attribute_list_item,
   [mapTranslation.id]: mapTranslation,
   [editorToolbarExtend.id]: editorToolbarExtend,
-  [html5PresetGeneral.id]: html5PresetGeneral
+  [html5PresetGeneral.id]: html5PresetGeneral,
+  [authorOutlineElementMenu.id]: authorOutlineElementMenu
 };
