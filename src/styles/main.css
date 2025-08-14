@@ -1,0 +1,18 @@
+/* Main CSS Entry Point */
+
+
+/* ===== CSS ENTRY POINT ===== */
+/* This file handles plain CSS and Tailwind CSS */
+/* SCSS and LESS are processed separately via their own entry points */
+
+/* Import existing CSS files */
+/* @import '../index.css'; */
+
+/* Import Tailwind CSS (after all @import statements) */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import additional CSS files */
+/* @import './utilities.css'; */
+/* @import './custom.css'; */

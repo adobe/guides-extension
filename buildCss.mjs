@@ -17,6 +17,8 @@ import tailwindConfig from "./tailwind.config.js";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
+// This script is now primarily for Tailwind CSS processing
+// Main CSS bundling is handled by Vite configuration
 const generateTailwindCss = async (contentRaw) => {
   return (
     await postcss([
@@ -36,16 +38,9 @@ const generateTailwindCss = async (contentRaw) => {
 };
 
 (async () => {
-  const buildFile = join(__dirname, "dist", "build.css");
-  try {
-    await fs.unlink(buildFile);
-  } catch (err) {}
-  const outputStream = (await fs.open(buildFile, "a")).createWriteStream();
-  const files = await fs.readdir(join(__dirname, "src"));
-  for (const file of files) {
-    const fileText = (
-      await fs.readFile(join(__dirname, "src", file))
-    ).toString();
-    outputStream.write(await generateTailwindCss(fileText));
-  }
+  console.log("CSS processing completed by Vite build system.");
+  
+  // Optional: You can still generate additional Tailwind-specific CSS if needed
+  // const buildFile = join(__dirname, "dist", "tailwind-additional.css");
+  // ... additional processing if needed
 })();
