@@ -14,6 +14,7 @@ export default defineConfig({
   build: {
     target: 'es2015',
     minify: 'terser',
+    cssCodeSplit: false,
     lib: {
       entry: path.join(__dirname, "src/index.ts"),
       name: "guides-extension",
@@ -23,6 +24,11 @@ export default defineConfig({
       output: {
         manualChunks: undefined,
         strict: false,
+        assetFileNames: (assetInfo) => 
+          assetInfo.name && assetInfo.name.endsWith('.css') 
+            ? "build.css" 
+            : "[name][extname]"
+        ,
       },
       plugins: [
         terser({
