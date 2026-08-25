@@ -7,6 +7,9 @@ accordance with the terms of the Adobe license agreement accompanying
 it.
 */
 
+import "./styles/index.scss";
+import "./review_app_examples/review.less";
+
 import reviewComment from "./review_app_examples/review_comment";
 import inline_extend from "./review_app_examples/inline_review_panel";
 import topic_reviews_extend from "./review_app_examples/topic_reviews";
